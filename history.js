@@ -486,6 +486,374 @@ function initInnovations() {
 // Initialize the innovations section
 document.addEventListener('DOMContentLoaded', initInnovations);
 
+// Road Safety Statistics
+function initSafetyStats() {
+  // Animate statistic counters
+  const statValues = document.querySelectorAll('.stat-value');
+  
+  const animateValue = (element, start, end, duration) => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const value = Math.floor(progress * (end - start) + start);
+      element.textContent = value.toFixed(progress < 1 ? 0 : 2);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+
+  // Intersection Observer for animation triggers
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        statValues.forEach(el => {
+          const target = parseFloat(el.dataset.target);
+          animateValue(el, 0, target, 1500);
+        });
+        
+        // Initialize chart after counters are done
+        setTimeout(initSafetyChart, 1600);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('.safety-section'));
+
+  // Chart.js Visualization
+  function initSafetyChart() {
+    const ctx = document.getElementById('safetyChart').getContext('2d');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    
+    // Chart data
+    const chartData = {
+      region: {
+        labels: ['Africa', 'Americas', 'Eastern Mediterranean', 'Europe', 'South-East Asia', 'Western Pacific'],
+        datasets: [{
+          data: [26.6, 15.6, 17.4, 9.3, 17.5, 13.6],
+          backgroundColor: [
+            '#3498db',
+            '#e74c3c',
+            '#2ecc71',
+            '#f39c12',
+            '#9b59b6',
+            '#1abc9c'
+          ],
+          borderWidth: 0
+        }]
+      },
+      age: {
+        labels: ['0-14 years', '15-29 years', '30-44 years', '45-59 years', '60+ years'],
+        datasets: [{
+          data: [8, 38, 25, 18, 11],
+          backgroundColor: [
+            '#3498db',
+            '#e74c3c',
+            '#2ecc71',
+            '#f39c12',
+            '#9b59b6'
+          ],
+          borderWidth: 0
+        }]
+      },
+      type: {
+        labels: ['Pedestrians', 'Cyclists', 'Motorcyclists', 'Car Occupants', 'Other'],
+        datasets: [{
+          data: [23, 6, 28, 29, 14],
+          backgroundColor: [
+            '#3498db',
+            '#e74c3c',
+            '#2ecc71',
+            '#f39c12',
+            '#9b59b6'
+          ],
+          borderWidth: 0
+        }]
+      }
+    };
+
+    // Chart config
+    const chartConfig = {
+      type: 'doughnut',
+      data: chartData.region,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: {
+              font: {
+                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                size: 14
+              },
+              padding: 20,
+              usePointStyle: true,
+              pointStyle: 'circle'
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${context.raw}%`;
+              }
+            }
+          }
+        },
+        cutout: '65%',
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    };
+
+    // Create chart
+    const safetyChart = new Chart(ctx, chartConfig);
+
+    // Tab switching functionality
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const tab = btn.dataset.tab;
+        safetyChart.data = chartData[tab];
+        safetyChart.update();
+      });
+    });
+  }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initSafetyStats);
+
+// Famous Roads Map
+function initFamousRoads() {
+  // Sample data for famous roads
+  const roadsData = [
+    {
+      id: 1,
+      name: "Route 66",
+      country: "United States",
+      length: "3,940 km",
+      year: "1926",
+      description: "The iconic 'Main Street of America' running from Chicago to Santa Monica, symbolizing American freedom and adventure.",
+      coordinates: [35.173809, -99.320980],
+      image: "https://source.unsplash.com/random/800x600/?route66",
+      tags: ["Historic", "Scenic"],
+      type: "highway"
+    },
+    {
+      id: 2,
+      name: "Pan-American Highway",
+      country: "Multiple Countries",
+      length: "30,000 km",
+      year: "1936",
+      description: "The world's longest motorable road network stretching from Alaska to Argentina, connecting diverse landscapes and cultures.",
+      coordinates: [9.748917, -83.753426], // Costa Rica
+      image: "https://source.unsplash.com/random/800x600/?panamerican,highway",
+      tags: ["Longest", "International"],
+      type: "highway"
+    },
+    {
+      id: 3,
+      name: "Great Ocean Road",
+      country: "Australia",
+      length: "243 km",
+      year: "1932",
+      description: "One of the world's most scenic coastal drives along Australia's southeastern coast, featuring the Twelve Apostles.",
+      coordinates: [-38.680555, 143.392778],
+      image: "https://source.unsplash.com/random/800x600/?great,ocean,road",
+      tags: ["Coastal", "Scenic"],
+      type: "coastal"
+    },
+    {
+      id: 4,
+      name: "Transfăgărășan Highway",
+      country: "Romania",
+      length: "90 km",
+      year: "1974",
+      description: "Dramatic mountain road crossing the Carpathians, famous for its sharp turns and stunning alpine views.",
+      coordinates: [45.602222, 24.608333],
+      image: "https://source.unsplash.com/random/800x600/?transfagarasan",
+      tags: ["Mountain", "Winding"],
+      type: "mountain"
+    },
+    {
+      id: 5,
+      name: "Trollstigen",
+      country: "Norway",
+      length: "106 km",
+      year: "1936",
+      description: "The 'Troll's Path' features 11 hairpin bends up a steep mountainside with breathtaking waterfalls and views.",
+      coordinates: [62.455833, 7.671944],
+      image: "https://source.unsplash.com/random/800x600/?trollstigen",
+      tags: ["Mountain", "Hairpin"],
+      type: "mountain"
+    },
+    {
+      id: 6,
+      name: "Stelvio Pass",
+      country: "Italy",
+      length: "24 km",
+      year: "1825",
+      description: "One of the highest and most spectacular mountain passes in the Alps with 48 hairpin turns.",
+      coordinates: [46.528611, 10.453056],
+      image: "https://source.unsplash.com/random/800x600/?stelvio,pass",
+      tags: ["Alps", "Hairpin"],
+      type: "mountain"
+    }
+  ];
+
+  // DOM Elements
+  const roadList = document.getElementById('roadList');
+  const roadsMap = document.getElementById('roadsMap');
+  const infoPanel = document.querySelector('.road-info-panel');
+  const roadName = document.querySelector('.road-name');
+  const roadDescription = document.querySelector('.road-description');
+  const roadImage = document.querySelector('.road-image');
+  const roadCountry = document.querySelector('.road-country span');
+  const roadLength = document.querySelector('.road-length span');
+  const roadYear = document.querySelector('.road-year span');
+  const roadTags = document.querySelector('.road-tags');
+  const exploreBtn = document.querySelector('.btn-explore');
+  const photosBtn = document.querySelector('.btn-photos');
+  const closePanelBtn = document.querySelector('.close-panel');
+  const searchInput = document.querySelector('.search-input');
+  const searchBtn = document.querySelector('.search-btn');
+
+  // Initialize Map
+  const map = L.map(roadsMap, {
+    zoomControl: false,
+    attributionControl: false
+  }).setView([20, 0], 2);
+
+  // Add tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+  }).addTo(map);
+
+  // Custom icon
+  const roadIcon = L.divIcon({
+    className: 'road-marker',
+    html: '<i class="fas fa-road"></i>',
+    iconSize: [24, 24]
+  });
+
+  // Add markers to map and create list items
+  roadsData.forEach(road => {
+    // Create marker
+    const marker = L.marker(road.coordinates, {
+      icon: roadIcon
+    }).addTo(map);
+    
+    // Bind popup
+    marker.bindPopup(`<b>${road.name}</b><br>${road.country}`);
+    
+    // Create list item
+    const listItem = document.createElement('div');
+    listItem.className = 'road-list-item';
+    listItem.dataset.id = road.id;
+    listItem.innerHTML = `
+      <div class="road-icon">
+        <i class="fas fa-${road.type === 'highway' ? 'route' : road.type === 'coastal' ? 'water' : 'mountain'}"></i>
+      </div>
+      <div>
+        <div class="road-name">${road.name}</div>
+        <div class="road-location">${road.country}</div>
+      </div>
+    `;
+    
+    // Add click event to list item
+    listItem.addEventListener('click', () => {
+      showRoadInfo(road);
+      map.flyTo(road.coordinates, 7);
+      document.querySelectorAll('.road-list-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      listItem.classList.add('active');
+    });
+    
+    // Add click event to marker
+    marker.on('click', () => {
+      showRoadInfo(road);
+      document.querySelectorAll('.road-list-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      document.querySelector(`.road-list-item[data-id="${road.id}"]`).classList.add('active');
+    });
+    
+    roadList.appendChild(listItem);
+  });
+
+  // Show road info in panel
+  function showRoadInfo(road) {
+    roadName.textContent = road.name;
+    roadDescription.textContent = road.description;
+    roadImage.style.backgroundImage = `url(${road.image})`;
+    roadCountry.textContent = road.country;
+    roadLength.textContent = road.length;
+    roadYear.textContent = road.year;
+    
+    // Set Google Maps link
+    exploreBtn.href = `https://www.google.com/maps?q=${road.coordinates[0]},${road.coordinates[1]}`;
+    
+    // Clear and add tags
+    roadTags.innerHTML = '';
+    road.tags.forEach(tag => {
+      const tagElement = document.createElement('span');
+      tagElement.className = 'road-tag';
+      tagElement.textContent = tag;
+      roadTags.appendChild(tagElement);
+    });
+    
+    // Show panel
+    infoPanel.classList.add('active');
+  }
+
+  // Close info panel
+  closePanelBtn.addEventListener('click', () => {
+    infoPanel.classList.remove('active');
+    document.querySelectorAll('.road-list-item').forEach(item => {
+      item.classList.remove('active');
+    });
+  });
+
+  // Search functionality
+  searchBtn.addEventListener('click', searchRoads);
+  searchInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') searchRoads();
+  });
+
+  function searchRoads() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const listItems = document.querySelectorAll('.road-list-item');
+    
+    listItems.forEach(item => {
+      const name = item.querySelector('.road-name').textContent.toLowerCase();
+      const country = item.querySelector('.road-location').textContent.toLowerCase();
+      
+      if (name.includes(searchTerm) || country.includes(searchTerm)) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Set first road as active by default if panel is closed
+  if (!infoPanel.classList.contains('active')) {
+    const firstRoad = roadsData[0];
+    document.querySelector(`.road-list-item[data-id="${firstRoad.id}"]`).classList.add('active');
+  }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initFamousRoads);
 
 
 

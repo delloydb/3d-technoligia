@@ -177,51 +177,123 @@
 <!-- Road Safety Statistics -->
 <section class="safety-section">
   <div class="safety-container">
-    <h2 class="section-title">Road Safety Statistics</h2>
-    <p class="section-description">Key statistics highlighting the importance of road safety measures.</p>
-    <div class="safety-stats">
-      <div class="stat-item">
-        <h3 class="stat-title">Global Road Fatalities</h3>
-        <p class="stat-value">1.35 million</p>
-        <p class="stat-description">people die each year in road traffic crashes.</p>
-      </div>
-      <div class="stat-item">
-        <h3 class="stat-title">Injuries Annually</h3>
-        <p class="stat-value">20-50 million</p>
-        <p class="stat-description">people suffer non-fatal injuries, often resulting in long
-          term disabilities.</p>
-      </div>
-      <div class="stat-item">
-        <h3 class="stat-title">Economic Impact</h3>
-        <p class="stat-value">$518 billion</p>
-        <p class="stat-description">is lost globally due to road traffic injuries.</p>
-      </div>
+    <div class="safety-header">
+      <h2 class="section-title">Road Safety Statistics</h2>
+      <p class="section-description">Key metrics demonstrating the critical need for improved road safety worldwide</p>
     </div>
-    <div class="safety-visualization">
-      <div class="visualization-container" id="safetyVisualization">
-        <!-- Visualization will be injected here -->
+    
+    <div class="safety-content">
+      <div class="stat-cards">
+        <div class="stat-card" data-stat="fatalities">
+          <div class="stat-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-title">Global Road Fatalities</h3>
+            <div class="stat-value" data-target="1.35">0</div>
+            <span class="stat-unit">million</span>
+            <p class="stat-description">Annual deaths from road traffic accidents worldwide</p>
+          </div>
+        </div>
+        
+        <div class="stat-card" data-stat="injuries">
+          <div class="stat-icon">
+            <i class="fas fa-procedures"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-title">Non-Fatal Injuries</h3>
+            <div class="stat-value" data-target="50">0</div>
+            <span class="stat-unit">million</span>
+            <p class="stat-description">People suffering serious injuries each year</p>
+          </div>
+        </div>
+        
+        <div class="stat-card" data-stat="economic">
+          <div class="stat-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-title">Economic Impact</h3>
+            <div class="stat-value" data-target="518">0</div>
+            <span class="stat-unit">billion</span>
+            <p class="stat-description">Global economic losses from road accidents</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="safety-visualization">
+        <div class="visualization-header">
+          <h3>Global Road Accident Distribution</h3>
+          <div class="visualization-tabs">
+            <button class="tab-btn active" data-tab="region">By Region</button>
+            <button class="tab-btn" data-tab="age">By Age Group</button>
+            <button class="tab-btn" data-tab="type">By Accident Type</button>
+          </div>
+        </div>
+        <div class="visualization-container" id="safetyVisualization">
+          <canvas id="safetyChart"></canvas>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-    <!-- Famous Roads Map -->
-    <section class="famous-roads-section">
+
+<!-- Famous Roads Map -->
+<section class="famous-roads-section">
+  <div class="roads-container">
+    <div class="roads-header">
       <h2 class="section-title">Legendary Roads of the World</h2>
-      <div class="map-container" id="roads-map"></div>
+      <p class="section-description">Explore iconic routes that have shaped transportation history</p>
+    </div>
+    
+    <div class="roads-content">
+      <div class="map-sidebar">
+        <div class="road-search">
+          <input type="text" placeholder="Search roads..." class="search-input">
+          <button class="search-btn"><span class="sr-only">Search</span><i class="fas fa-search"></i></button>
+        </div>
+        <div class="road-list" id="roadList">
+          <!-- Road list items will be injected here -->
+        </div>
+      </div>
+      
+      <div class="map-container" id="roadsMap">
+        <!-- Map will be injected here -->
+      </div>
+      
       <div class="road-info-panel">
-        <h3>Select a road to learn more</h3>
+        <div class="panel-header">
+          <h3>Road Information</h3>
+          <button class="close-panel" aria-label="Close panel"><i class="fas fa-times"></i></button>
+        </div>
         <div class="road-details">
-          <div class="road-image"></div>
+          <div class="road-image-container">
+            <div class="road-image"></div>
+            <div class="road-tags"></div>
+          </div>
           <div class="road-text">
             <h4 class="road-name"></h4>
+            <div class="road-meta">
+              <span class="road-country"><i class="fas fa-map-marker-alt"></i> <span></span></span>
+              <span class="road-length"><i class="fas fa-road"></i> <span></span></span>
+              <span class="road-year"><i class="fas fa-history"></i> <span></span></span>
+            </div>
             <p class="road-description"></p>
-            <a href="#" class="btn btn-explore" target="_blank">Explore in Google Maps</a>
+            <div class="road-buttons">
+              <a href="#" class="btn btn-explore" target="_blank">
+                <i class="fas fa-map-marked-alt"></i> Explore in Google Maps
+              </a>
+              <button class="btn btn-photos">
+                <i class="fas fa-camera"></i> View Photos
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
 <!-- Global Footer -->
 <footer class="global-footer">

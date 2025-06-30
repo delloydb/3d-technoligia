@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Action | Global Roadways</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="action.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header (reuse from index.html) -->
+  <header class="main-header">
+    <!-- ... -->
+  </header>
+
+  <main class="action-main">
+    <!-- Hero with Counter -->
+    <section class="action-hero">
+      <div class="hero-content">
+        <h1>Be Part of the <span>Solution</span></h1>
+        <p>Join thousands working to make roads safer worldwide</p>
+        <div class="action-counter">
+          <div class="counter-item">
+            <span class="number" id="pledge-count">24,891</span>
+            <span class="label">Safety Pledges</span>
+          </div>
+          <div class="counter-item">
+            <span class="number" id="reports-count">8,342</span>
+            <span class="label">Hazards Reported</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="action-icons">
+          <div class="icon-circle">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="icon-circle">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="icon-circle">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <div class="icon-circle">
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Pledge -->
+    <section class="pledge-section">
+      <div class="pledge-container">
+        <div class="pledge-card">
+          <h2><i class="fas fa-handshake"></i> Take the Road Safety Pledge</h2>
+          <div class="pledge-content">
+            <div class="pledge-text">
+              <p>"I commit to being a responsible road user and advocating for safer streets by:"</p>
+              <ul class="pledge-points">
+                <li>
+                  <input type="checkbox" id="pledge1" checked>
+                  <label for="pledge1">Following all traffic laws and speed limits</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="pledge2">
+                  <label for="pledge2">Never using my phone while driving</label>
+                </li>
+                <!-- More pledge items -->
+              </ul>
+            </div>
+            <form class="pledge-form">
+              <div class="form-group">
+                <label for="pledge-name">Your Name</label>
+                <input type="text" id="pledge-name" required>
+              </div>
+              <div class="form-group">
+                <label for="pledge-email">Email (optional)</label>
+                <input type="email" id="pledge-email">
+              </div>
+              <div class="form-group">
+                <label for="pledge-location">Location</label>
+                <select id="pledge-location">
+                  <option value="">Select your country</option>
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <!-- More countries -->
+                </select>
+              </div>
+              <button type="submit" class="btn btn-pledge">
+                <i class="fas fa-signature"></i> Sign the Pledge
+              </button>
+            </form>
+          </div>
+          <div class="pledge-confirmation">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank you for your commitment!</h3>
+            <p>Share your pledge to inspire others:</p>
+            <div class="social-share">
+              <a href="#" class="social-btn twitter" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-btn facebook" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-btn linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="pledge-map">
+          <div class="map-container" id="pledge-map"></div>
+          <div class="map-legend">
+            <div class="legend-item">
+              <span class="legend-color legend-green"></span>
+              <span class="legend-label">100+ pledges</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color legend-yellow"></span>
+              <span class="legend-label">50-99 pledges</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color legend-red"></span>
+              <span class="legend-label">Under 50 pledges</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Report Hazards -->
+    <section class="report-section">
+      <div class="section-header">
+        <h2><i class="fas fa-exclamation-triangle"></i> Report Unsafe Road Conditions</h2>
+        <p>Help authorities identify and fix dangerous spots</p>
+      </div>
+      <div class="report-container">
+        <div class="report-form">
+          <form id="hazard-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hazard-type">Hazard Type</label>
+                <select id="hazard-type" required>
+                  <option value="">Select type</option>
+                  <option value="pothole">Pothole</option>
+                  <option value="signage">Missing/Damaged Signage</option>
+                  <option value="lighting">Poor Lighting</option>
+                  <option value="crossing">Dangerous Crossing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="hazard-severity">Severity</label>
+                <select id="hazard-severity" required>
+                  <option value="low">Low (Minor inconvenience)</option>
+                  <option value="medium">Medium (Potentially dangerous)</option>
+                  <option value="high">High (Immediate danger)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="hazard-location">Location</label>
+              <input type="text" id="hazard-location" placeholder="Address or landmark" required>
+              <button type="button" id="locate-me" class="btn-locate">
+                <i class="fas fa-location-arrow"></i> Use My Location
+              </button>
+            </div>
+            <div class="form-group">
+              <label for="hazard-description">Description</label>
+              <textarea id="hazard-description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="hazard-photo">Upload Photo (Optional)</label>
+              <input type="file" id="hazard-photo" accept="image/*">
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-report">
+                <i class="fas fa-paper-plane"></i> Submit Report
+              </button>
+              <p class="form-note">Reports are sent to local authorities</p>
+            </div>
+          </form>
+        </div>
+        <div class="report-map">
+          <div class="map-container" id="hazard-map"></div>
+          <div class="recent-reports">
+            <h3>Recently Reported Hazards</h3>
+            <div class="report-item">
+              <div class="report-type pothole">
+                <i class="fas fa-road"></i>
+              </div>
+              <div class="report-details">
+                <h4>Large pothole on Main St</h4>
+                <p>Reported 2 days ago • 5 confirmations</p>
+              </div>
+            </div>
+            <!-- More report items -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Petition -->
+    <section class="petition-section">
+      <div class="section-header">
+        <h2><i class="fas fa-pen-fancy"></i> Start a Community Petition</h2>
+        <p>Advocate for safer roads in your neighborhood</p>
+      </div>
+      <div class="petition-container">
+        <div class="petition-create">
+          <h3>Create Your Petition</h3>
+          <form id="petition-form">
+            <div class="form-group">
+              <label for="petition-title">Title</label>
+              <input type="text" id="petition-title" placeholder="E.g., 'Install crosswalks near school'" required>
+            </div>
+            <div class="form-group">
+              <label for="petition-location">Location</label>
+              <input type="text" id="petition-location" required>
+            </div>
+            <div class="form-group">
+              <label for="petition-description">Description</label>
+              <textarea id="petition-description" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="petition-goal">Signature Goal</label>
+              <input type="number" id="petition-goal" min="100" value="500">
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-petition">
+                <i class="fas fa-rocket"></i> Launch Petition
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="petition-examples">
+          <h3>Successful Petitions</h3>
+          <div class="example-card">
+            <div class="example-progress">
+              <div class="progress-bar progress-bar-120"></div>
+              <span class="progress-text">1,200/1,000 signatures</span>
+            </div>
+            <h4>Speed bumps on Oak Avenue</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Portland, OR</p>
+            <p class="outcome">Approved for installation in 2024</p>
+          </div>
+          <!-- More example cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation-section">
+      <div class="section-header">
+        <h2><i class="fas fa-heart"></i> Support Road Safety Organizations</h2>
+        <p>Contribute to NGOs making a difference</p>
+      </div>
+      <div class="donation-grid">
+        <div class="ngo-card">
+          <div class="ngo-logo">
+            <img src="images/ngo1.png" alt="Global Road Safety Partnership">
+          </div>
+          <div class="ngo-info">
+            <h3>Global Road Safety Partnership</h3>
+            <p class="focus">Focus: Worldwide road safety programs</p>
+            <div class="impact-stats">
+              <div class="stat">
+                <span class="number">42</span>
+                <span class="label">Countries</span>
+              </div>
+              <div class="stat">
+                <span class="number">15%</span>
+                <span class="label">Reduction in fatalities</span>
+              </div>
+            </div>
+          </div>
+          <div class="donation-options">
+            <button class="donation-amount" data-amount="25">$25</button>
+            <button class="donation-amount" data-amount="50">$50</button>
+            <button class="donation-amount" data-amount="100">$100</button>
+            <input type="number" id="custom-amount" placeholder="Custom">
+            <button class="btn btn-donate">Donate Now</button>
+          </div>
+        </div>
+        <!-- More NGO cards -->
+      </div>
+      <div class="donation-impact">
+        <h3>Your Impact</h3>
+        <div class="impact-items">
+          <div class="impact-item">
+            <i class="fas fa-child"></i>
+            <p>$50 funds a child's road safety education</p>
+          </div>
+          <!-- More impact items -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="main-footer">
+    <!-- ... -->
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="action.js" type="module"></script>
+</body>
+</html>

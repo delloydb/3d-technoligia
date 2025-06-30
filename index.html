@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Roadways | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background Elements -->
+  <div class="road-line road-line-1"></div>
+  <div class="road-line road-line-2"></div>
+  <div class="road-line road-line-3"></div>
+  
+  <!-- Header with Animated Logo -->
+  <header class="main-header">
+    <div class="logo" id="logo">
+      <svg class="logo-svg" width="50" height="50" viewBox="0 0 50 50">
+        <path class="logo-path" d="M25,5 L40,15 L35,40 L15,40 L10,15 Z" fill="none" stroke="#3498db" stroke-width="2"/>
+      </svg>
+      <h1>Global<span>Roadways</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="history.html" class="nav-link">History</a></li>
+        <li><a href="safety.html" class="nav-link">Safety</a></li>
+        <li><a href="future.html" class="nav-link">Future</a></li>
+        <li><a href="action.html" class="nav-link">Take Action</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <div class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </button>
+  </header>
+
+  <!-- 3D Parallax Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Building Safer</span>
+        <span class="title-line">Roads for</span>
+        <span class="title-line">Everyone</span>
+      </h1>
+      <p class="hero-subtitle">Join our global movement to transform transportation infrastructure and save lives</p>
+      <div class="hero-buttons">
+        <a href="action.html" class="btn btn-liquid">
+          <span class="btn-text">Take Action</span>
+          <span class="liquid"></span>
+        </a>
+        <a href="safety.html" class="btn btn-outline">
+          <span class="btn-text">Learn Safety</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="globe-container" id="globe"></div>
+      <div class="car-animation">
+        <div class="road">
+          <div class="car">
+            <div class="car-body">
+              <div class="car-top"></div>
+              <div class="car-wheel car-wheel-front"></div>
+              <div class="car-wheel car-wheel-back"></div>
+              <div class="car-light"></div>
+            </div>
+          </div>
+          <div class="road-line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <p>Scroll to explore</p>
+    </div>
+  </section>
+
+<!-- Updated Animated Facts Section -->
+<section class="facts-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-word title-word-1">Roadways</span>
+        <span class="title-word title-word-2">By</span>
+        <span class="title-word title-word-3">Numbers</span>
+      </h2>
+      <p class="section-subtitle">Discover the impact of global transportation infrastructure through key metrics</p>
+    </div>
+    
+    <div class="facts-grid">
+      <!-- Fact Card 1 -->
+      <div class="fact-card" data-number="64.3" data-suffix="M+">
+        <div class="fact-card-inner">
+          <div class="fact-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M18,15H16V17H18M18,11H16V13H18M20,19H12V17H14V15H12V13H14V11H12V9H20M10,7H8V5H10M10,11H8V9H10M10,15H8V13H10M10,19H8V17H10M6,7H4V5H6M6,11H4V9H6M6,15H4V13H6M6,19H4V17H6M12,7V5H22V19H12V17H10V19C10,20.1 10.9,21 12,21H22C23.1,21 24,20.1 24,19V5C24,3.9 23.1,3 22,3H12C10.9,3 10,3.9 10,5V7H12Z"/>
+            </svg>
+          </div>
+          <div class="fact-content">
+            <h3 class="fact-number"><span class="counter">0</span><span class="suffix">M+</span></h3>
+            <p class="fact-text">Kilometers of Roads Worldwide</p>
+            <div class="fact-detail">Enough to circle the Earth 1,600 times</div>
+          </div>
+          <div class="fact-wave">
+            <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,15 C15,25 30,5 45,15 S75,5 90,15 S105,5 120,15 V28 H0 Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Fact Card 2 -->
+      <div class="fact-card" data-number="1.35" data-suffix="M">
+        <div class="fact-card-inner">
+          <div class="fact-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+            </svg>
+          </div>
+          <div class="fact-content">
+            <h3 class="fact-number"><span class="counter">0</span><span class="suffix">M</span></h3>
+            <p class="fact-text">Annual Road Fatalities occurring across the globe</p>
+            <div class="fact-detail">Leading cause of death for ages 5-29</div>
+          </div>
+          <div class="fact-wave">
+            <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,15 C15,25 30,5 45,15 S75,5 90,15 S105,5 120,15 V28 H0 Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Fact Card 3 -->
+      <div class="fact-card" data-number="4000" data-suffix="+">
+        <div class="fact-card-inner">
+          <div class="fact-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21.9,11.5C21.7,11 21.4,10.6 21,10.2V10C21,8.9 20.1,8 19,8H13L10,11H7C5.9,11 5,11.9 5,13V18C5,19.1 5.9,20 7,20H7.3C7.1,19.4 7,18.7 7,18C7,14.7 9.7,12 13,12C16.3,12 19,14.7 19,18C19,18.7 18.9,19.4 18.7,20H19C20.1,20 21,19.1 21,18V15.8C21.4,15.4 21.7,15 21.9,14.5C22.6,13.1 22.1,11.5 21.9,11.5Z"/>
+            </svg>
+          </div>
+          <div class="fact-content">
+            <h3 class="fact-number"><span class="counter">0</span><span class="suffix">+</span></h3>
+            <p class="fact-text">Years of Road History since it Genesis to Date</p>
+            <div class="fact-detail">Since the first paved roads in Mesopotamia</div>
+          </div>
+          <div class="fact-wave">
+            <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,15 C15,25 30,5 45,15 S75,5 90,15 S105,5 120,15 V28 H0 Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Fact Card 4 -->
+      <div class="fact-card" data-number="90" data-suffix="%">
+        <div class="fact-card-inner">
+          <div class="fact-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.1,7 14,7.9 14,9C14,10.1 13.1,11 12,11C10.9,11 10,10.1 10,9C10,7.9 10.9,7 12,7M18,13.66C16.86,15.13 15.17,16.15 13.34,16.41L12,16.5L10.66,16.41C8.83,16.15 7.14,15.13 6,13.66C5.87,13.5 5.84,13.26 5.93,13.08C6,12.9 6.2,12.78 6.41,12.78H7.15C8.07,12.78 8.93,13.05 9.6,13.5C10.29,13.94 11.13,14.19 12,14.19C12.87,14.19 13.71,13.94 14.4,13.5C15.07,13.05 15.93,12.78 16.85,12.78H17.59C17.8,12.78 18,12.9 18.07,13.08C18.16,13.26 18.13,13.5 18,13.66Z"/>
+            </svg>
+          </div>
+          <div class="fact-content">
+            <h3 class="fact-number"><span class="counter">0</span><span class="suffix">%</span></h3>
+            <p class="fact-text">Countries with Road Safety Laws and Rules</p>
+            <div class="fact-detail">Covering more than 5 key risk factors across the globe</div>
+          </div>
+          <div class="fact-wave">
+            <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,15 C15,25 30,5 45,15 S75,5 90,15 S105,5 120,15 V28 H0 Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-footer">
+      <button class="btn btn-learn-more">
+        <span>Explore More Data</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Interactive Timeline -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-word title-word-1">Road</span>
+        <span class="title-word title-word-2">Evolution</span>
+      </h2>
+      <p class="section-subtitle">Journey through the milestones that shaped global transportation</p>
+    </div>
+    
+    <div class="timeline-container">
+      <div class="timeline-progress" id="timeline-progress"></div>
+      
+      <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item" data-year="4000 BCE">
+          <div class="timeline-dot">
+            <div class="dot-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">4000 BCE</div>
+            <h3 class="timeline-title">First Paved Roads</h3>
+            <div class="timeline-image ancient-mesopotamia-image">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="timeline-desc">
+              <p>The earliest known paved roads were constructed in Mesopotamia (modern Iraq) using stone slabs with bitumen mortar.</p>
+              <button class="btn-timeline-more" aria-label="Learn more about Mesopotamian roads">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V11H13V17M13,9H11V7H13V9Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item" data-year="312 BCE">
+          <div class="timeline-dot">
+            <div class="dot-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">312 BCE</div>
+            <h3 class="timeline-title">Roman Roads Begin</h3>
+            <div class="timeline-image" >
+              <div class="image-overlay"></div>
+            </div>
+            <div class="timeline-desc">
+              <p>Appian Way construction begins, marking the start of Rome's advanced road network that would span 400,000 km across the empire.</p>
+              <button class="btn-timeline-more" aria-label="Learn more about Roman roads">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V11H13V17M13,9H11V7H13V9Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item" data-year="1815">
+          <div class="timeline-dot">
+            <div class="dot-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1815</div>
+            <h3 class="timeline-title">Macadam Roads</h3>
+            <div class="timeline-image macadam-road-image">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="timeline-desc">
+              <p>John McAdam introduces his revolutionary road construction method using compacted stone layers, forming the basis for modern roads.</p>
+              <button class="btn-timeline-more" aria-label="Learn more about Macadam roads">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V11H13V17M13,9H11V7H13V9Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item" data-year="1908">
+          <div class="timeline-dot">
+            <div class="dot-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1908</div>
+            <h3 class="timeline-title">Asphalt Revolution</h3>
+            <div class="timeline-image asphalt-construction-image">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="timeline-desc">
+              <p>Modern asphalt paving begins with the first mile of concrete pavement in Detroit, enabling mass automobile transportation.</p>
+              <button class="btn-timeline-more" aria-label="Learn more about asphalt roads">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V11H13V17M13,9H11V7H13V9Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item" data-year="1956">
+          <div class="timeline-dot">
+            <div class="dot-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1956</div>
+            <h3 class="timeline-title">US Interstate System</h3>
+            <div class="timeline-image highway-interstate-image">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="timeline-desc">
+              <p>President Eisenhower signs the Federal-Aid Highway Act, creating the 41,000-mile US Interstate Highway System.</p>
+              <button class="btn-timeline-more" aria-label="Learn more about US Interstates">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V11H13V17M13,9H11V7H13V9Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Timeline Item 6 -->
+        <div class="timeline-item" data-year="2023">
+          <div class="timeline-dot">
+            <div class="dot-pulse"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2023</div>
+            <h3 class="timeline-title">Smart Roads Era</h3>
+            <div class="timeline-image smart-highway-image">
+              <div class="image-overlay"></div>
+            </div>
+            <div class="timeline-desc">
+              <p>Intelligent transportation systems integrate solar roads, IoT sensors, and autonomous vehicle infrastructure worldwide.</p>
+              <button class="btn-timeline-more" aria-label="Learn more about smart roads">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V11H13V17M13,9H11V7H13V9Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="timeline-controls">
+      <button class="btn-timeline-nav" id="timeline-prev" aria-label="Previous timeline item">
+        <svg viewBox="0 0 24 24">
+          <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/>
+        </svg>
+      </button>
+      <div class="timeline-scrollbar">
+        <div class="scrollbar-track" id="scrollbar-track"></div>
+        <div class="scrollbar-thumb" id="scrollbar-thumb"></div>
+      </div>
+      <button class="btn-timeline-nav" id="timeline-next" aria-label="Next timeline item">
+        <svg viewBox="0 0 24 24">
+          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- Interactive Quiz Section -->
+<section class="quiz-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-word title-word-1">Road</span>
+        <span class="title-word title-word-2">Safety</span>
+        <span class="title-word title-word-3">Challenge</span>
+      </h2>
+      <p class="section-subtitle">Test your knowledge and learn crucial safety facts</p>
+    </div>
+    
+    <!-- Quiz Progress Indicator -->
+    <div class="quiz-progress">
+      <div class="progress-track">
+        <div class="progress-bar" id="quiz-progress"></div>
+      </div>
+      <div class="progress-text">
+        <span id="current-question">0</span>/<span id="total-questions">5</span>
+      </div>
+    </div>
+    
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+      <!-- Question Slide (dynamically populated by JavaScript) -->
+      <div class="quiz-slide active" id="quiz-slide">
+        <div class="quiz-question">
+          <h3 id="question-text">Loading question...</h3>
+        </div>
+        <div class="quiz-options" id="quiz-options">
+          <!-- Options will be inserted here by JavaScript -->
+        </div>
+      </div>
+      
+      <!-- Results Slide (hidden initially) -->
+      <div class="results-slide" id="results-slide">
+        <div class="results-header">
+          <div class="results-score">
+            <span id="score-value">0</span>%
+          </div>
+          <h3 id="results-title">Quiz Complete!</h3>
+          <p id="results-subtitle">Here's how you did:</p>
+        </div>
+        
+        <div class="results-details">
+          <div class="results-stats">
+            <div class="stat-item">
+              <div class="stat-value" id="correct-answers">0</div>
+              <div class="stat-label">Correct</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="incorrect-answers">0</div>
+              <div class="stat-label">Incorrect</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="time-spent">0</div>
+              <div class="stat-label">Seconds</div>
+            </div>
+          </div>
+          
+          <div class="results-feedback" id="results-feedback">
+            <!-- Feedback will be inserted here -->
+          </div>
+        </div>
+        
+        <div class="results-actions">
+          <button class="btn-retake" id="retake-quiz">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7Z"/>
+            </svg>
+            Retake Quiz
+          </button>
+          <a href="safety.html" class="btn-learn-more">
+            Learn More Safety Tips
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quiz Toggle (for starting) -->
+    <div class="quiz-toggle" id="quiz-toggle">
+      <button class="btn-start-quiz">
+        <span>Start Safety Quiz</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Enhanced Road Safety Tips Section -->
+<section class="safety-tips-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-word title-word-1">Road</span>
+        <span class="title-word title-word-2">Safety</span>
+        <span class="title-word title-word-3">Essentials</span>
+      </h2>
+      <p class="section-subtitle">Life-saving practices for drivers, pedestrians and cyclists</p>
+    </div>
+    
+    <div class="safety-tips-grid">
+      <!-- Tip 1 - Seatbelts -->
+      <div class="safety-tip-card" data-category="driving">
+        <div class="tip-visual">
+          <div class="tip-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3C6.5,3 2,6.58 2,11C2,13.13 3.05,15.07 4.75,16.5C4.75,17.1 4.33,18.67 2,21C4.37,20.89 6.64,20 8.47,18.5C9.61,18.83 10.81,19 12,19C17.5,19 22,15.42 22,11C22,6.58 17.5,3 12,3M12,17C7.58,17 4,14.31 4,11C4,7.69 7.58,5 12,5C16.42,5 20,7.69 20,11C20,14.31 16.42,17 12,17Z"/>
+              <path d="M9,12C8.45,12 8,11.55 8,11C8,10.45 8.45,10 9,10C9.55,10 10,10.45 10,11C10,11.55 9.55,12 9,12M15,12C14.45,12 14,11.55 14,11C14,10.45 14.45,10 15,10C15.55,10 16,10.45 16,11C16,11.55 15.55,12 15,12Z"/>
+            </svg>
+          </div>
+          <div class="tip-image seatbelt-image">
+            <img src="1.jpg" alt="" class="tip-image-inner">
+          </div>
+        </div>
+        <div class="tip-content">
+          <div class="tip-category driving">Driving</div>
+          <h3 class="tip-title">Always Buckle Up</h3>
+          <p class="tip-description">Seatbelts reduce fatal injury risk by 45% for front seat occupants and 60% for rear seat passengers.</p>
+          <div class="tip-stats">
+            <div class="stat">
+              <div class="stat-value">45%</div>
+              <div class="stat-label">Reduction in fatalities</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">50%</div>
+              <div class="stat-label">Reduction in serious injuries</div>
+            </div>
+          </div>
+          <button class="btn-tip-more" data-modal="seatbelt-modal">
+            <span>Learn Proper Use</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Tip 2 - Traffic Signals -->
+      <div class="safety-tip-card" data-category="driving">
+        <div class="tip-visual">
+          <div class="tip-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M19.4,13A1.6,1.6 0 0,0 21,11.6C21,10.63 20.37,10 19.4,10H17V8.6C17,7.63 16.37,7 15.4,7H8.6C7.63,7 7,7.63 7,8.6V15.4A1.6,1.6 0 0,0 8.6,17H15.4C16.37,17 17,16.37 17,15.4V13H19.4M4.6,13H7V15.4C7,16.37 6.37,17 5.4,17H4.6C3.63,17 3,16.37 3,15.4V14.6C3,13.63 3.63,13 4.6,13M4.6,7H5.4C6.37,7 7,7.63 7,8.6V10H4.6C3.63,10 3,9.37 3,8.6V7.4A1.6,1.6 0 0,1 4.6,7M19.4,7A1.6,1.6 0 0,1 21,8.6V9.4C21,10.37 20.37,11 19.4,11H17V8.6C17,7.63 17.63,7 18.6,7H19.4Z"/>
+            </svg>
+          </div>
+          <div class="tip-image traffic-light-image">
+            <img src="2.jpg" alt="" class="tip-image-inner">
+          </div>
+        </div>
+        <div class="tip-content">
+          <div class="tip-category driving">Driving</div>
+          <h3 class="tip-title">Respect Traffic Signals</h3>
+          <p class="tip-description">Running red lights causes over 100,000 crashes annually. Yellow means prepare to stop, not accelerate.</p>
+          <div class="tip-stats">
+            <div class="stat">
+              <div class="stat-value">96%</div>
+              <div class="stat-label">Of drivers fear red-light runners</div>
+            </div>
+            <div class="stat-value">2x</div>
+              <div class="stat-label">More likely to cause injury</div>
+            </div>
+          </div>
+          <button class="btn-tip-more" data-modal="signals-modal">
+            <span>Signal Meanings</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Tip 3 - Distractions -->
+      <div class="safety-tip-card" data-category="driving">
+        <div class="tip-visual">
+          <div class="tip-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+              <path d="M9.5,12.5L11,14L8,17L11,20L9.5,21.5L5,17L9.5,12.5Z"/>
+              <path d="M14.5,12.5L13,14L16,17L13,20L14.5,21.5L19,17L14.5,12.5Z"/>
+            </svg>
+          </div>
+          <div class="tip-image distracted-driver-image">
+            <img src="3.jpg" alt="" class="tip-image-inner">
+          </div>
+        </div>
+        <div class="tip-content">
+          <div class="tip-category driving">Driving</div>
+          <h3 class="tip-title">Eliminate Distractions</h3>
+          <p class="tip-description">Texting while driving makes you 23x more likely to crash. It takes 5 seconds to read a text - at 55mph, that's driving blind the length of a football field.</p>
+          <div class="tip-stats">
+            <div class="stat">
+              <div class="stat-value">23x</div>
+              <div class="stat-label">Crash risk when texting</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">400%</div>
+              <div class="stat-label">More time eyes off road</div>
+            </div>
+          </div>
+          <button class="btn-tip-more" data-modal="distraction-modal">
+            <span>Focus Techniques</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Tip 4 - Pedestrian Safety -->
+      <div class="safety-tip-card" data-category="pedestrian">
+        <div class="tip-visual">
+          <div class="tip-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M10.5,22V16H7.5L10.5,7H13.5L16.5,16H13.5V22H10.5Z"/>
+            </svg>
+          </div>
+          <div class="tip-image pedestrian-image">
+            <img src="3.jpg" alt="" class="tip-image-inner">
+          </div>
+        </div>
+        <div class="tip-content">
+          <div class="tip-category pedestrian">Pedestrian</div>
+          <h3 class="tip-title">Cross Safely</h3>
+          <p class="tip-description">80% of pedestrian deaths occur at non-intersections. Always use crosswalks, make eye contact with drivers, and avoid distractions while crossing.</p>
+          <div class="tip-stats">
+            <div class="stat">
+              <div class="stat-value">80%</div>
+              <div class="stat-label">Deaths at non-intersections</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">47%</div>
+              <div class="stat-label">Happen at night</div>
+            </div>
+          </div>
+          <button class="btn-tip-more" data-modal="pedestrian-modal">
+            <span>Crossing Guide</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Tip 5 - Cycling Safety -->
+      <div class="safety-tip-card" data-category="cycling">
+        <div class="tip-visual">
+          <div class="tip-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M5,20.5A3.5,3.5 0 0,1 1.5,17A3.5,3.5 0 0,1 5,13.5A3.5,3.5 0 0,1 8.5,17A3.5,3.5 0 0,1 5,20.5M5,12A5,5 0 0,0 0,17A5,5 0 0,0 5,22A5,5 0 0,0 10,17A5,5 0 0,0 5,12M14.8,10H19V8.2H15.8L13.86,4.93C13.57,4.43 13,4.1 12.4,4.1C11.93,4.1 11.5,4.29 11.2,4.6L7.5,8.29C7.19,8.6 7,9 7,9.5C7,10.13 7.33,10.66 7.85,10.97L11.2,13V18H13V11.5L10.75,9.85L13.07,7.5M19,20.5A3.5,3.5 0 0,1 15.5,17A3.5,3.5 0 0,1 19,13.5A3.5,3.5 0 0,1 22.5,17A3.5,3.5 0 0,1 19,20.5M19,12A5,5 0 0,0 14,17A5,5 0 0,0 19,22A5,5 0 0,0 24,17A5,5 0 0,0 19,12M16,4.8C17,4.8 17.8,4 17.8,3C17.8,2 17,1.2 16,1.2C15,1.2 14.2,2 14.2,3C14.2,4 15,4.8 16,4.8Z"/>
+            </svg>
+          </div>
+          <div class="tip-image bicycle-safety-image">
+            <img src="4.jpg" alt="" class="tip-image-inner">
+          </div>
+        </div>
+        <div class="tip-content">
+          <div class="tip-category cycling">Cycling</div>
+          <h3 class="tip-title">Be Visible, Ride Smart</h3>
+          <p class="tip-description">Bike lights reduce collision risk by 47%. Always wear a helmet, use hand signals, and ride with traffic - not against it.</p>
+          <div class="tip-stats">
+            <div class="stat">
+              <div class="stat-value">47%</div>
+              <div class="stat-label">Reduction with lights</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">85%</div>
+              <div class="stat-label">Head injuries prevented by helmets</div>
+            </div>
+          </div>
+          <button class="btn-tip-more" data-modal="cycling-modal">
+            <span>Cycling Rules</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Tip 6 - Child Safety -->
+      <div class="safety-tip-card" data-category="child">
+        <div class="tip-visual">
+          <div class="tip-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2A3,3 0 0,1 15,5A3,3 0 0,1 12,8A3,3 0 0,1 9,5A3,3 0 0,1 12,2M11,22H8V16H6V9H18V16H16V22H13V18H11V22Z"/>
+            </svg>
+          </div>
+          <div class="tip-image child-seat-image">
+            <img src="1.jpg" alt="" class="tip-image-inner">
+          </div>
+        </div>
+        <div class="tip-content">
+          <div class="tip-category child">Child Safety</div>
+          <h3 class="tip-title">Proper Child Restraints</h3>
+          <p class="tip-description">Car seats reduce infant fatalities by 71% and toddler deaths by 54%. Children should ride rear-facing until at least age 2.</p>
+          <div class="tip-stats">
+            <div class="stat">
+              <div class="stat-value">71%</div>
+              <div class="stat-label">Infant deaths prevented</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">54%</div>
+              <div class="stat-label">Toddler deaths prevented</div>
+            </div>
+          </div>
+          <button class="btn-tip-more" data-modal="child-modal">
+            <span>Installation Guide</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-footer">
+      <button class="btn-filter" data-filter="all">All Tips</button>
+      <button class="btn-filter" data-filter="driving">Driving</button>
+      <button class="btn-filter" data-filter="pedestrian">Pedestrian</button>
+      <button class="btn-filter" data-filter="cycling">Cycling</button>
+      <button class="btn-filter" data-filter="child">Child Safety</button>
+    </div>
+  </div>
+  
+  <!-- Modal Structure -->
+  <div class="tip-modal" id="seatbelt-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Proper Seatbelt Use</h3>
+      <div class="modal-image1" ></div>
+      <div class="modal-body">
+        <p><strong>Correct positioning:</strong> The lap belt should lie snugly across the upper thighs, not the stomach. The shoulder belt should cross the chest and collarbone.</p>
+        <p><strong>Common mistakes:</strong> Never put the shoulder belt behind your back or under your arm. Pregnant women should place the lap belt under the belly.</p>
+        <p><strong>Child restraints:</strong> Children under 4'9" should use booster seats to ensure proper belt positioning.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-modal" id="signals-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Understanding Traffic Signals</h3>
+      <div class="modal-image2"></div>
+      <div class="modal-body">
+        <p><strong>Red Light:</strong> Stop completely. Do not enter the intersection.</p>
+        <p><strong>Yellow Light:</strong> Prepare to stop. If you cannot stop safely, proceed with caution.</p>
+        <p><strong>Green Light:</strong> Proceed through the intersection, yielding to pedestrians and cyclists.</p>
+        <p><strong>Flashing Yellow:</strong> Slow down and proceed with caution.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-modal" id="distraction-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Avoiding Distractions</h3>
+      <div class="modal-image3"></div>
+      <div class="modal-body">
+        <p><strong>Texting:</strong> Put your phone away while driving. Use hands-free devices if necessary.</p>
+        <p><strong>Navigation:</strong> Set your GPS before starting your trip. Use voice commands if available.</p>
+        <p><strong>Passengers:</strong> Limit conversations and avoid arguments that can divert your attention.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-modal" id="pedestrian-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Safe Crossing Practices</h3>
+      <div class="modal-image4"></div>
+      <div class="modal-body">
+        <p><strong>Use Crosswalks:</strong> Always cross at marked crosswalks and obey pedestrian signals.</p>
+        <p><strong>Look Both Ways:</strong> Before crossing, look left, right, and left again to ensure no vehicles are approaching.</p>
+        <p><strong>Avoid Distractions:</strong> Put away your phone and avoid wearing headphones while crossing.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip-modal" id="cycling-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Cycling Safety Tips</h3>
+      <div class="modal-image5"></div>
+      <div class="modal-body">
+        <p><strong>Wear a Helmet:</strong> Always wear a properly fitted helmet to protect your head in case of a fall.</p>
+        <p><strong>Use Lights:</strong> Equip your bike with front and rear lights, especially when riding at night or in low visibility conditions.</p>
+        <p><strong>Follow Traffic Rules:</strong> Obey all traffic signals and ride in the same direction as vehicles.</p>
+      </div>
+    </div>
+  </div>
+<!-- Enhanced Call to Action Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-text">
+        <h2 class="cta-title">
+          <span class="title-line">Join the Movement</span>
+          <span class="title-line">for Safer Roads</span>
+        </h2>
+        <p class="cta-subtitle">Be part of the global change. Advocate for better road safety measures in your community today.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="action.html" class="btn btn-cta-primary">
+          <span>Get Involved</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+          </svg>
+        </a>
+        <a href="safety.html" class="btn btn-cta-secondary">
+          <span>Learn More</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Newsletter Section -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-box">
+      <div class="newsletter-content">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-word title-word-1">Stay</span>
+            <span class="title-word title-word-2">Updated</span>
+          </h2>
+          <p class="section-subtitle">Join our community and receive the latest road safety innovations directly to your inbox</p>
+        </div>
+        
+        <form class="newsletter-form">
+          <div class="input-group">
+            <input type="email" placeholder="Your email address" required>
+            <span class="input-highlight"></span>
+          </div>
+          <button type="submit" class="btn btn-submit">
+            <span>Subscribe Now</span>
+            <svg class="icon-send" viewBox="0 0 24 24">
+              <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+            </svg>
+            <svg class="icon-check" viewBox="0 0 24 24">
+              <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+            </svg>
+          </button>
+          
+          <div class="form-footer">
+            <div class="form-message"></div>
+            <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+          </div>
+        </form>
+      </div>
+      
+      <div class="newsletter-visual">
+        <div class="floating-car">
+          <svg viewBox="0 0 24 24">
+            <path d="M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z"/>
+          </svg>
+        </div>
+        <div class="floating-sign">
+          <svg viewBox="0 0 24 24">
+            <path d="M12,3L2,12H5V20H19V12H22L12,3M10,10H14V18H10V10Z"/>
+          </svg>
+        </div>
+        <div class="floating-envelope">
+          <svg viewBox="0 0 24 24">
+            <path d="M22,6C22,4.9 21.1,4 20,4H4C2.9,4 2,4.9 2,6V18C2,19.1 2.9,20 4,20H20C21.1,20 22,19.1 22,18V6M20,6L12,11L4,6H20M20,18H4V8L12,13L20,8V18Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Footer -->
+<footer class="global-footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#3498db"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#3498db"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#3498db"></path>
+    </svg>
+  </div>
+  
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: About -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <svg class="logo-svg" width="40" height="40" viewBox="0 0 50 50">
+              <path class="logo-path" d="M25,5 L40,15 L35,40 L15,40 L10,15 Z" fill="none" stroke="white" stroke-width="2"/>
+            </svg>
+            <span>GlobalRoadways</span>
+          </div>
+          <p class="footer-about">We're committed to creating safer roads for everyone through education, advocacy, and innovation.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24">
+                <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">Road History</a></li>
+            <li><a href="safety.html">Safety Statistics</a></li>
+            <li><a href="future.html">Future Innovations</a></li>
+            <li><a href="action.html">Take Action</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Resources -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="downloads.html">Safety Guides</a></li>
+            <li><a href="research.html">Research Papers</a></li>
+            <li><a href="statistics.html">Global Statistics</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="glossary.html">Transportation Glossary</a></li>
+            <li><a href="partners.html">Our Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Contact Us</h3>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24">
+                <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+              </svg>
+              <span>123 Safety Avenue, Roadville, RV 12345</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24">
+                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+              </svg>
+              <span>+1 (800) 555-ROAD</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24">
+                <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
+              </svg>
+              <span>info@globalroadways.org</span>
+            </li>
+          </ul>
+          
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <form class="footer-form">
+              <input type="email" placeholder="Your email" required>
+              <button type="submit" aria-label="Subscribe to newsletter">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="footer-copyright">
+          &copy; <span id="current-year"></span> GlobalRoadways. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.24.0/dist/globe.gl.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

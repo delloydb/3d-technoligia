@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environmental Impact | Global Roadways</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="environment.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+</head>
+<body>
+  <!-- Header (reuse from index.html) -->
+  <header class="main-header">
+    <!-- ... -->
+  </header>
+
+  <main class="environment-main">
+    <!-- Hero with Animated Earth -->
+    <section class="environment-hero">
+      <div class="hero-content">
+        <h1>Roads & <span class="highlight">Our Planet</span></h1>
+        <p>Exploring the environmental impact of transportation infrastructure</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="number" id="co2-stat">1.5</span>
+            <span class="label">Billion tons CO₂ annually</span>
+          </div>
+          <div class="stat">
+            <span class="number" id="species-stat">25</span>
+            <span class="label">Species threatened per km</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="earth-animation" id="earth-canvas">
+          <!-- Animated Earth visualization -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Carbon Footprint Calculator -->
+    <section class="calculator-section">
+      <div class="section-header">
+        <h2>Road Construction Carbon Calculator</h2>
+        <p>Estimate the environmental impact of different road types</p>
+      </div>
+      <div class="calculator-container">
+        <div class="calculator-controls">
+          <div class="input-group">
+            <label for="road-type">Road Type</label>
+            <select id="road-type">
+              <option value="highway">Highway (4 lanes)</option>
+              <option value="arterial">Arterial Road (2 lanes)</option>
+              <option value="local">Local Road (1 lane)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="road-length">Length (km)</label>
+            <input type="range" id="road-length" min="1" max="100" value="10">
+            <span class="length-value">10 km</span>
+          </div>
+          <div class="input-group">
+            <label for="material">Primary Material</label>
+            <select id="material">
+              <option value="asphalt">Traditional Asphalt</option>
+              <option value="concrete">Portland Cement Concrete</option>
+              <option value="recycled">Recycled Materials</option>
+            </select>
+          </div>
+          <button id="calculate-btn" class="btn">Calculate Impact</button>
+        </div>
+        <div class="calculator-results">
+          <div class="result-card">
+            <h3>Carbon Emissions</h3>
+            <div class="gauge" id="co2-gauge"></div>
+            <p class="result-value"><span id="co2-value">0</span> tons CO₂</p>
+            <p class="result-comparison">Equivalent to <span id="co2-comparison">0 cars</span> for a year</p>
+          </div>
+          <div class="result-card">
+            <h3>Energy Consumption</h3>
+            <div class="gauge" id="energy-gauge"></div>
+            <p class="result-value"><span id="energy-value">0</span> MWh</p>
+            <p class="result-comparison">Power for <span id="energy-comparison">0 homes</span> for a year</p>
+          </div>
+        </div>
+      </div>
+      <div class="mitigation-tips">
+        <h3>Reduction Strategies</h3>
+        <div class="tips-grid">
+          <div class="tip">
+            <i class="fas fa-recycle"></i>
+            <p>Using recycled materials can reduce emissions by 30-50%</p>
+          </div>
+          <!-- More tips -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Wildlife Corridors -->
+    <section class="wildlife-section">
+      <div class="section-header">
+        <h2>Wildlife Corridors & Road Ecology</h2>
+        <p>How infrastructure affects ecosystems and solutions that help</p>
+      </div>
+      <div class="wildlife-container">
+        <div class="wildlife-map" id="wildlife-map"></div>
+        <div class="wildlife-info">
+          <div class="info-tabs">
+            <button class="tab-btn active" data-tab="problem">The Problem</button>
+            <button class="tab-btn" data-tab="solutions">Solutions</button>
+            <button class="tab-btn" data-tab="case-studies">Case Studies</button>
+          </div>
+          <div class="tab-content active" data-tab="problem">
+            <h3>Habitat Fragmentation</h3>
+            <p>Roads divide ecosystems, creating barriers to animal movement that can...</p>
+            <ul>
+              <li>Reduce genetic diversity by isolating populations</li>
+              <li>Increase roadkill mortality rates</li>
+              <li>Alter migration patterns</li>
+            </ul>
+          </div>
+          <!-- Other tab contents -->
+          <div class="wildlife-gallery">
+            <div class="gallery-item">
+              <img src="images/wildlife-bridge.jpg" alt="Wildlife overpass">
+              <p>Banff National Park's wildlife overpasses reduced collisions by 80%</p>
+            </div>
+            <!-- More gallery items -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Urban Heat Islands -->
+    <section class="heat-island-section">
+      <div class="section-header">
+        <h2>Urban Heat Island Effect</h2>
+        <p>How roads contribute to rising city temperatures</p>
+      </div>
+      <div class="heat-container">
+        <div class="heat-visualization">
+          <div class="city-model">
+            <div class="road" data-temp="42°C"></div>
+            <div class="park" data-temp="28°C"></div>
+            <div class="building" data-temp="35°C"></div>
+          </div>
+          <div class="temperature-key">
+            <div class="key-gradient"></div>
+            <div class="key-labels">
+              <span>25°C</span>
+              <span>45°C</span>
+            </div>
+          </div>
+        </div>
+        <div class="heat-solutions">
+          <h3>Cool Road Solutions</h3>
+          <div class="solution-card">
+            <h4>Porous Pavements</h4>
+            <p>Allow water infiltration, reducing surface temps by 5-7°C</p>
+          </div>
+          <!-- More solution cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainable Materials -->
+    <section class="materials-section">
+      <div class="section-header">
+        <h2>Sustainable Road Materials</h2>
+        <p>Innovations reducing environmental impact</p>
+      </div>
+      <div class="materials-grid">
+        <div class="material-card">
+          <div class="material-image">
+            <img src="images/recycled-plastic-road.jpg" alt="Recycled plastic road">
+            <div class="material-badge">
+              <span>CO₂ Reduction: 30%</span>
+            </div>
+          </div>
+          <div class="material-info">
+            <h3>Plastic Roads</h3>
+            <p>Incorporating recycled plastics into asphalt mixes</p>
+            <a href="#" class="btn btn-outline">Case Studies <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- More material cards -->
+      </div>
+    </section>
+
+    <!-- Take Action -->
+    <section class="action-section">
+      <h2>Help Reduce Road Environmental Impact</h2>
+      <div class="action-cards">
+        <div class="action-card">
+          <i class="fas fa-tree"></i>
+          <h3>Support Green Infrastructure</h3>
+          <a href="#" class="btn">Find Local Initiatives</a>
+        </div>
+        <!-- More action cards -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="main-footer">
+    <!-- ... -->
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="environment.js" type="module"></script>
+</body>
+</html>

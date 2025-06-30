@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History of Roads | Global Roadways</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="history.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+</head>
+<body>
+  <!-- Reuse header from index.html -->
+  <header class="main-header">
+    <!-- ... -->
+  </header>
+
+  <main class="history-main">
+    <!-- Hero Section -->
+    <section class="history-hero">
+      <div class="hero-content">
+        <h1><span>From Ancient Paths</span> <span>to Modern Highways</span></h1>
+        <p>Explore 6,000 years of road evolution</p>
+      </div>
+      <div class="hero-scroll-arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section class="timeline-section">
+      <h2 class="section-title">Road Evolution Timeline</h2>
+      <div class="timeline-container">
+        <div class="timeline-progress-bar"></div>
+        <div class="timeline-items">
+          <!-- Timeline items injected via JavaScript -->
+        </div>
+      </div>
+      <button class="timeline-nav prev" aria-label="Previous era"><i class="fas fa-arrow-left"></i></button>
+      <button class="timeline-nav next" aria-label="Next era"><i class="fas fa-arrow-right"></i></button>
+    </section>
+
+    <!-- Historical Gallery -->
+    <section class="gallery-section">
+      <h2 class="section-title">Historical Road Gallery</h2>
+      <div class="gallery-controls">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ancient">Ancient</button>
+        <button class="filter-btn" data-filter="medieval">Medieval</button>
+        <button class="filter-btn" data-filter="modern">Modern</button>
+      </div>
+      <div class="gallery-grid">
+        <!-- Gallery items injected via JavaScript -->
+      </div>
+      <div class="gallery-lightbox">
+        <div class="lightbox-content">
+          <img src="" alt="">
+          <button class="close-lightbox" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+          <div class="image-info"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Innovations -->
+    <section class="innovations-section">
+      <h2 class="section-title">Engineering Breakthroughs</h2>
+      <div class="innovation-accordion">
+        <!-- Accordion items injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Famous Roads Map -->
+    <section class="famous-roads-section">
+      <h2 class="section-title">Legendary Roads of the World</h2>
+      <div class="map-container" id="roads-map"></div>
+      <div class="road-info-panel">
+        <h3>Select a road to learn more</h3>
+        <div class="road-details">
+          <div class="road-image"></div>
+          <div class="road-text">
+            <h4 class="road-name"></h4>
+            <p class="road-description"></p>
+            <a href="#" class="btn btn-explore" target="_blank">Explore in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reuse footer from index.html -->
+  <footer class="main-footer">
+    <!-- ... -->
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="history.js" type="module"></script>
+</body>
+</html>

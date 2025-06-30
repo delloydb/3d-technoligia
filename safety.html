@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Road Safety | Roadways</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="safety.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css">
+</head>
+<body>
+  <!-- Header (reuse from index.html) -->
+  <header class="main-header">
+    <!-- ... -->
+  </header>
+
+  <main class="safety-main">
+    <!-- Hero with Live Counter -->
+    <section class="safety-hero">
+      <div class="hero-content">
+        <h1>Road Safety <span class="highlight">Crisis</span> in Real Time</h1>
+        <div class="live-counter">
+          <div class="counter-item">
+            <span class="counter" data-target="1350000">0</span>
+            <p>Annual Road Deaths</p>
+          </div>
+          <div class="counter-item">
+            <span class="counter" data-target="3700">0</span>
+            <p>Deaths Per Day</p>
+          </div>
+          <div class="counter-item">
+            <span class="counter" data-target="25">0</span>
+            <p>Deaths Per Minute</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="pulse-animation"></div>
+        <img src="images/emergency-icon.svg" alt="Emergency" class="emergency-icon">
+      </div>
+    </section>
+
+    <!-- Interactive Safety Map -->
+    <section class="safety-map-section">
+      <div class="section-header">
+        <h2>Global Road Fatality Heatmap</h2>
+        <div class="map-controls">
+          <label for="map-metric" class="visually-hidden">Select map metric</label>
+          <select id="map-metric">
+            <option value="deaths">Total Deaths</option>
+            <option value="rate">Deaths per 100k</option>
+            <option value="pedestrians">Pedestrian Deaths</option>
+          </select>
+          <button id="play-animation" aria-label="Play timeline">
+            <i class="fas fa-play"></i> 10-Year Trend
+          </button>
+        </div>
+      </div>
+      <div class="map-container" id="safety-map"></div>
+      <div class="map-legend">
+        <div class="legend-gradient"></div>
+        <div class="legend-labels">
+          <span>Low</span>
+          <span>High</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Country Comparison -->
+    <section class="comparison-section">
+      <h2>Safety Comparison by Country</h2>
+      <div class="comparison-tabs">
+        <button class="tab-btn active" data-tab="worst">Most Dangerous</button>
+        <button class="tab-btn" data-tab="best">Safest</button>
+        <button class="tab-btn" data-tab="improving">Most Improved</button>
+      </div>
+      <div class="tab-content active" id="worst">
+        <div class="chart-container">
+          <canvas id="worst-chart"></canvas>
+        </div>
+      </div>
+      <div class="tab-content" id="best">
+        <div class="chart-container">
+          <canvas id="best-chart"></canvas>
+        </div>
+      </div>
+      <div class="tab-content" id="improving">
+        <div class="chart-container">
+          <canvas id="improving-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dangerous Roads Showcase -->
+    <section class="dangerous-roads-section">
+      <h2>World's Most Dangerous Roads</h2>
+      <div class="roads-carousel">
+        <button class="carousel-btn prev" aria-label="Previous road"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track">
+          <!-- Road cards injected via JS -->
+        </div>
+        <button class="carousel-btn next" aria-label="Next road"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="road-details-modal">
+        <div class="modal-content">
+          <button class="close-modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+          <h3 class="road-title"></h3>
+          <div class="road-stats">
+            <div class="stat">
+              <span class="stat-value fatalities"></span>
+              <span class="stat-label">Annual Fatalities</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value length"></span>
+              <span class="stat-label">Length</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value danger-rating"></span>
+              <span class="stat-label">Danger Rating</span>
+            </div>
+          </div>
+          <div class="road-map" id="road-detail-map"></div>
+          <p class="road-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pedestrian Safety -->
+    <section class="pedestrian-section">
+      <div class="pedestrian-content">
+        <h2>Pedestrian Safety Crisis</h2>
+        <p class="subtitle">50% of all road deaths are vulnerable road users</p>
+        <div class="pedestrian-grid">
+          <div class="pedestrian-card">
+            <div class="card-icon">
+              <i class="fas fa-child"></i>
+            </div>
+            <h3>Children at Risk</h3>
+            <p>500 children die daily in road accidents</p>
+          </div>
+          <!-- 3 more cards -->
+        </div>
+        <div class="pedestrian-video">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/safety-video" title="Pedestrian safety video" allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <h3>How Cities Can Save Lives</h3>
+            <p>Urban design strategies that reduce pedestrian fatalities by up to 75%</p>
+          </div>
+        </div>
+      </div>
+      <div class="pedestrian-visual">
+        <div class="crosswalk-animation">
+          <div class="pedestrian"></div>
+          <div class="car"></div>
+          <div class="crosswalk"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Action CTA -->
+    <section class="action-cta">
+      <h2>Ready to Make Roads Safer?</h2>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">Download Safety Toolkit</a>
+        <a href="#" class="btn btn-secondary">Join Advocacy Campaign</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="main-footer">
+    <!-- ... -->
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="safety.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Users | Global Roadways</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="users.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header (reuse from index.html) -->
+  <header class="main-header">
+    <!-- ... -->
+  </header>
+
+  <main class="users-main">
+    <!-- Hero with Interactive Selector -->
+    <section class="users-hero">
+      <div class="hero-content">
+        <h1>Road Users <span>Safety Hub</span></h1>
+        <p>Learn your rights and responsibilities on the road</p>
+        <div class="user-type-selector">
+          <div class="selector-wheel">
+            <div class="option" data-user="pedestrian">
+              <i class="fas fa-walking"></i>
+              <span>Pedestrian</span>
+            </div>
+            <div class="option" data-user="cyclist">
+              <i class="fas fa-bicycle"></i>
+              <span>Cyclist</span>
+            </div>
+            <div class="option active" data-user="motorist">
+              <i class="fas fa-car"></i>
+              <span>Motorist</span>
+            </div>
+            <div class="option" data-user="child">
+              <i class="fas fa-child"></i>
+              <span>Children</span>
+            </div>
+            <div class="option" data-user="elderly">
+              <i class="fas fa-wheelchair"></i>
+              <span>Elderly/Disabled</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="road-visualization" id="road-canvas">
+          <!-- Interactive road scene rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Content Sections -->
+    <section class="user-content-section">
+      <!-- Content changes based on selected user type -->
+      <div class="user-info active" data-user="pedestrian">
+        <h2><i class="fas fa-walking"></i> Pedestrian Safety</h2>
+        <div class="info-grid">
+          <div class="info-card rights">
+            <h3>Your Rights</h3>
+            <ul>
+              <li>Right-of-way at marked crosswalks</li>
+              <li>Safe sidewalk access in urban areas</li>
+              <li>Clear visibility at intersections</li>
+            </ul>
+          </div>
+          <div class="info-card responsibilities">
+            <h3>Your Responsibilities</h3>
+            <ul>
+              <li>Use crosswalks where available</li>
+              <li>Make eye contact with drivers</li>
+              <li>Avoid distractions (phones/headphones)</li>
+            </ul>
+          </div>
+          <div class="info-card quiz">
+            <h3>Test Your Knowledge</h3>
+            <div class="mini-quiz">
+              <p>When should you make eye contact with drivers?</p>
+              <div class="quiz-options">
+                <button class="quiz-option">Only at night</button>
+                <button class="quiz-option correct">Before crossing any road</button>
+                <button class="quiz-option">Only in bad weather</button>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+          </div>
+          <div class="info-card stats">
+            <h3>Did You Know?</h3>
+            <div class="stat-item">
+              <span class="stat-number">23%</span>
+              <span class="stat-desc">of pedestrian deaths occur at intersections</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other user type content (cyclist, motorist, etc.) -->
+      <!-- Structure repeats with relevant content for each type -->
+    </section>
+
+    <!-- Road Sharing Simulation -->
+    <section class="simulation-section">
+      <h2>Road Sharing Simulator</h2>
+      <div class="simulator-container">
+        <div class="scenario-controls">
+          <label for="scenario-select" class="visually-hidden">Choose a road sharing scenario</label>
+          <select id="scenario-select">
+            <option value="crosswalk">Crosswalk Scenario</option>
+            <option value="bike-lane">Bike Lane Transition</option>
+            <option value="school-zone">School Zone</option>
+            <option value="roundabout">Roundabout</option>
+          </select>
+          <button id="play-simulation" class="btn">
+            <i class="fas fa-play"></i> Run Simulation
+          </button>
+          <button id="reset-simulation" class="btn btn-outline">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+        </div>
+        <div class="simulation-view">
+          <div class="road-base">
+            <div class="lane" id="vehicle-lane"></div>
+            <div class="lane" id="bike-lane"></div>
+            <div class="sidewalk"></div>
+            <div class="crosswalk"></div>
+          </div>
+          <div class="simulation-vehicles">
+            <div class="vehicle car"></div>
+            <div class="vehicle bike"></div>
+            <div class="vehicle pedestrian"></div>
+          </div>
+        </div>
+        <div class="simulation-feedback">
+          <h3>Safety Analysis</h3>
+          <div class="feedback-message">
+            <p>Select a scenario and click "Run Simulation" to see proper road sharing techniques.</p>
+          </div>
+          <div class="safety-tips"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Considerations -->
+    <section class="special-considerations">
+      <h2>Protecting Vulnerable Users</h2>
+      <div class="consideration-tabs">
+        <button class="tab-btn active" data-tab="children">
+          <i class="fas fa-child"></i> Children
+        </button>
+        <button class="tab-btn" data-tab="elderly">
+          <i class="fas fa-wheelchair"></i> Elderly
+        </button>
+        <button class="tab-btn" data-tab="disabled">
+          <i class="fas fa-blind"></i> Disabled
+        </button>
+      </div>
+      <div class="tab-content active" data-tab="children">
+        <div class="content-grid">
+          <div class="content-image">
+            <img src="images/child-safety.jpg" alt="Child road safety">
+          </div>
+          <div class="content-text">
+            <h3>Child Pedestrian Safety</h3>
+            <ul>
+              <li>Children's peripheral vision is 30% narrower than adults'</li>
+              <li>They need 3-4 seconds to cross a standard road</li>
+              <li>School zones require extra vigilance from all road users</li>
+            </ul>
+            <a href="#" class="btn">Download School Zone Safety Guide</a>
+          </div>
+        </div>
+      </div>
+      <!-- Other tab contents -->
+    </section>
+
+    <!-- Shared Road Pledge -->
+    <section class="pledge-section">
+      <div class="pledge-card">
+        <h2>Take the Shared Road Pledge</h2>
+        <div class="pledge-content">
+          <p>"I pledge to respect all road users and prioritize safety over convenience."</p>
+          <form class="pledge-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email (optional)">
+            <button type="submit" class="btn">Sign the Pledge</button>
+          </form>
+          <div class="pledge-count">
+            <span class="count">24,891</span> people have taken the pledge
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="main-footer">
+    <!-- ... -->
+  </footer>
+
+  <script src="user.js" type="module"></script>
+</body>
+</html>

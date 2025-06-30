@@ -60,3 +60,4 @@ function initSafetyHero() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initSafetyHero);
+

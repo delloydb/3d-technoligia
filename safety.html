@@ -96,31 +96,101 @@
   </div>
 </section>
 
-    <!-- Interactive Safety Map -->
-    <section class="safety-map-section">
-      <div class="section-header">
+ <!-- Interactive Safety Map -->
+<section class="safety-map-section">
+  <div class="map-container">
+    <div class="map-header">
+      <div class="header-content">
         <h2>Global Road Fatality Heatmap</h2>
-        <div class="map-controls">
-          <label for="map-metric" class="visually-hidden">Select map metric</label>
-          <select id="map-metric">
+        <p class="subtitle">Visualizing road safety risks worldwide by region and road user type</p>
+      </div>
+      
+      <div class="map-controls">
+        <div class="control-group">
+          <label for="map-metric">View By:</label>
+          <select id="map-metric" class="custom-select">
             <option value="deaths">Total Deaths</option>
             <option value="rate">Deaths per 100k</option>
-            <option value="pedestrians">Pedestrian Deaths</option>
+            <option value="pedestrians">Pedestrian Fatalities</option>
+            <option value="motorcyclists">Motorcyclist Fatalities</option>
+            <option value="children">Child Fatalities (0-14)</option>
           </select>
-          <button id="play-animation" aria-label="Play timeline">
-            <i class="fas fa-play"></i> 10-Year Trend
+        </div>
+        
+        <div class="control-group">
+          <label for="year-select">Year:</label>
+          <div class="year-controls">
+            <select id="year-select" class="custom-select">
+              <option value="2022">2022</option>
+              <option value="2020">2020</option>
+              <option value="2018">2018</option>
+              <option value="2016">2016</option>
+            </select>
+            <button id="play-animation" class="play-btn" aria-label="Play timeline animation">
+              <span class="play-icon"><i class="fas fa-play"></i></span>
+              <span class="play-text">Play Timeline</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="map-visualization">
+      <div class="map-wrapper">
+        <div id="safety-map"></div>
+        <div class="loading-overlay">
+          <div class="spinner"></div>
+          <p>Loading map data...</p>
+        </div>
+      </div>
+      
+      <div class="map-legend">
+        <div class="legend-header">
+          <h4>Fatality Rate Scale</h4>
+          <button class="legend-info" aria-label="About this metric">
+            <i class="fas fa-info-circle"></i>
           </button>
         </div>
+        <div class="legend-gradient">
+          <div class="gradient-bar"></div>
+          <div class="gradient-labels">
+            <span>0</span>
+            <span>5</span>
+            <span>10</span>
+            <span>15</span>
+            <span>20+</span>
+          </div>
+        </div>
+        <p class="legend-note">Deaths per 100,000 population</p>
       </div>
-      <div class="map-container" id="safety-map"></div>
-      <div class="map-legend">
-        <div class="legend-gradient"></div>
-        <div class="legend-labels">
-          <span>Low</span>
-          <span>High</span>
+    </div>
+    
+    <div class="map-tooltip">
+      <div class="tooltip-header">
+        <h4 class="country-name"></h4>
+        <span class="country-value"></span>
+      </div>
+      <div class="tooltip-body">
+        <div class="tooltip-metric">
+          <span class="metric-label">Total Deaths</span>
+          <span class="metric-value deaths"></span>
+        </div>
+        <div class="tooltip-metric">
+          <span class="metric-label">Pedestrian</span>
+          <span class="metric-value pedestrians"></span>
+        </div>
+        <div class="tooltip-metric">
+          <span class="metric-label">Motorcyclist</span>
+          <span class="metric-value motorcyclists"></span>
+        </div>
+        <div class="tooltip-metric">
+          <span class="metric-label">Child (0-14)</span>
+          <span class="metric-value children"></span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Country Comparison -->
     <section class="comparison-section">

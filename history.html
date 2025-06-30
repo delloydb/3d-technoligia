@@ -44,31 +44,76 @@
   </header>
 
 
-  <main class="history-main">
-    <!-- Hero Section -->
-    <section class="history-hero">
-      <div class="hero-content">
-        <h1><span>From Ancient Paths</span> <span>to Modern Highways</span></h1>
-        <p>Explore 6,000 years of road evolution</p>
-      </div>
-      <div class="hero-scroll-arrow">
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </section>
+<!-- Enhanced History Hero Section -->
+<section class="history-hero">
+  <!-- Animated Background Timeline -->
+  <div class="timeline-background">
+    <div class="timeline-path"></div>
+    <div class="timeline-marker ancient" data-year="4000 BCE">
+      <div class="marker-dot"></div>
+      <div class="marker-label">Ancient Roads</div>
+    </div>
+    <div class="timeline-marker roman" data-year="312 BCE">
+      <div class="marker-dot"></div>
+      <div class="marker-label">Roman Roads</div>
+    </div>
+    <div class="timeline-marker industrial" data-year="1815">
+      <div class="marker-dot"></div>
+      <div class="marker-label">Macadam Roads</div>
+    </div>
+    <div class="timeline-marker modern" data-year="1956">
+      <div class="marker-dot"></div>
+      <div class="marker-label">Interstate Era</div>
+    </div>
+  </div>
 
-    <!-- Interactive Timeline -->
-    <section class="timeline-section">
-      <h2 class="section-title">Road Evolution Timeline</h2>
-      <div class="timeline-container">
-        <div class="timeline-progress-bar"></div>
-        <div class="timeline-items">
-          <!-- Timeline items injected via JavaScript -->
-        </div>
-      </div>
-      <button class="timeline-nav prev" aria-label="Previous era"><i class="fas fa-arrow-left"></i></button>
-      <button class="timeline-nav next" aria-label="Next era"><i class="fas fa-arrow-right"></i></button>
-    </section>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">From Ancient Paths</span>
+        <span class="title-line">to Modern Highways</span>
+      </h1>
+      <p class="hero-subtitle">Explore 6,000 years of road evolution and innovation</p>
+      <a href="#timeline" class="btn-explore">
+        <span>Begin Journey</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 
+  <div class="hero-scroll-indicator">
+    <div class="scroll-text">Scroll Through History</div>
+    <div class="scroll-arrow">
+      <svg viewBox="0 0 24 24">
+        <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="timeline-wrapper">
+    <h1 class="timeline-header">Road Evolution Timeline</h1>
+    <div class="timeline-container">
+      <div class="timeline-progress" id="progressBar"></div>
+      
+      <div class="timeline" id="timeline">
+        <!-- Items will be injected here by JavaScript -->
+      </div>
+      
+      <div class="timeline-controls">
+        <button class="control-btn" id="prevBtn" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="timeline-dots" id="timelineDots"></div>
+        <button class="control-btn" id="nextBtn" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Historical Gallery -->
     <section class="gallery-section">
       <h2 class="section-title">Historical Road Gallery</h2>

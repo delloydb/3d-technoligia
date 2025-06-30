@@ -114,34 +114,96 @@
     </div>
   </div>
 </section>
-    <!-- Historical Gallery -->
-    <section class="gallery-section">
-      <h2 class="section-title">Historical Road Gallery</h2>
-      <div class="gallery-controls">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ancient">Ancient</button>
-        <button class="filter-btn" data-filter="medieval">Medieval</button>
-        <button class="filter-btn" data-filter="modern">Modern</button>
-      </div>
-      <div class="gallery-grid">
-        <!-- Gallery items injected via JavaScript -->
-      </div>
-      <div class="gallery-lightbox">
-        <div class="lightbox-content">
-          <img src="" alt="">
-          <button class="close-lightbox" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
-          <div class="image-info"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Key Innovations -->
-    <section class="innovations-section">
-      <h2 class="section-title">Engineering Breakthroughs</h2>
-      <div class="innovation-accordion">
-        <!-- Accordion items injected via JavaScript -->
+
+<!-- Historical Gallery -->
+<section class="gallery-section">
+  <div class="gallery-container">
+    <h2 class="section-title">Historical Road Gallery</h2>
+    <p class="section-subtitle">Explore the evolution of road construction through the ages</p>
+    
+    <div class="gallery-controls">
+      <button class="filter-btn active" data-filter="all">All Eras</button>
+      <button class="filter-btn" data-filter="ancient">Ancient Roads</button>
+      <button class="filter-btn" data-filter="medieval">Medieval Paths</button>
+      <button class="filter-btn" data-filter="modern">Modern Highways</button>
+    </div>
+    
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Gallery items will be injected here -->
+    </div>
+  </div>
+  
+  <!-- Lightbox -->
+  <div class="gallery-lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="close-lightbox" aria-label="Close lightbox">
+        <i class="fas fa-times"></i>
+      </button>
+      <img class="lightbox-image" src="" alt="">
+      <div class="image-info">
+        <h3 class="image-title"></h3>
+        <p class="image-era"></p>
+        <p class="image-description"></p>
       </div>
-    </section>
+      <button class="nav-btn prev-btn" aria-label="Previous image">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="nav-btn next-btn" aria-label="Next image">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Key Innovations -->
+<section class="innovations-section">
+  <div class="innovations-container">
+    <h2 class="section-title">Engineering Breakthroughs</h2>
+    <p class="section-subtitle">Pivotal innovations that shaped modern road infrastructure</p>
+    
+    <div class="innovation-accordion" id="innovationAccordion">
+      <!-- Accordion items will be injected here -->
+    </div>
+    
+    <div class="innovation-visual">
+      <div class="visual-container" id="innovationVisual">
+        <!-- Visual representation will be injected here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Road Safety Statistics -->
+<section class="safety-section">
+  <div class="safety-container">
+    <h2 class="section-title">Road Safety Statistics</h2>
+    <p class="section-description">Key statistics highlighting the importance of road safety measures.</p>
+    <div class="safety-stats">
+      <div class="stat-item">
+        <h3 class="stat-title">Global Road Fatalities</h3>
+        <p class="stat-value">1.35 million</p>
+        <p class="stat-description">people die each year in road traffic crashes.</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-title">Injuries Annually</h3>
+        <p class="stat-value">20-50 million</p>
+        <p class="stat-description">people suffer non-fatal injuries, often resulting in long
+          term disabilities.</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-title">Economic Impact</h3>
+        <p class="stat-value">$518 billion</p>
+        <p class="stat-description">is lost globally due to road traffic injuries.</p>
+      </div>
+    </div>
+    <div class="safety-visualization">
+      <div class="visualization-container" id="safetyVisualization">
+        <!-- Visualization will be injected here -->
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Famous Roads Map -->
     <section class="famous-roads-section">

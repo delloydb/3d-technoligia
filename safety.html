@@ -96,7 +96,7 @@
   </div>
 </section>
 
- <!-- Interactive Safety Map -->
+<!-- Interactive Safety Map -->
 <section class="safety-map-section">
   <div class="map-container">
     <div class="map-header">
@@ -192,30 +192,125 @@
   </div>
 </section>
 
-    <!-- Country Comparison -->
-    <section class="comparison-section">
-      <h2>Safety Comparison by Country</h2>
-      <div class="comparison-tabs">
-        <button class="tab-btn active" data-tab="worst">Most Dangerous</button>
-        <button class="tab-btn" data-tab="best">Safest</button>
-        <button class="tab-btn" data-tab="improving">Most Improved</button>
+<!-- Country Comparison -->
+<section class="comparison-section">
+  <div class="section-header">
+    <h2>Safety Comparison by Country</h2>
+    <p class="section-subtitle">Compare road safety performance across different metrics and regions</p>
+  </div>
+  
+  <div class="comparison-controls">
+    <div class="comparison-tabs">
+      <button class="tab-btn active" data-tab="worst">
+        <i class="fas fa-exclamation-triangle"></i> Most Dangerous
+      </button>
+      <button class="tab-btn" data-tab="best">
+        <i class="fas fa-shield-alt"></i> Safest
+      </button>
+      <button class="tab-btn" data-tab="improving">
+        <i class="fas fa-trend-up"></i> Most Improved
+      </button>
+    </div>
+    
+    <div class="metric-selector">
+      <label for="comparison-metric">Metric:</label>
+      <select id="comparison-metric" class="custom-select">
+        <option value="total">Total Fatalities</option>
+        <option value="rate">Fatality Rate</option>
+        <option value="pedestrian">Pedestrian Fatalities</option>
+        <option value="motorcycle">Motorcycle Fatalities</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="tab-content active" id="worst">
+    <div class="chart-header">
+      <h3>Countries with Highest Road Fatality Rates</h3>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="color-box worst"></span> Current Year</span>
+        <span class="legend-item"><span class="color-box comparison"></span> Previous Year</span>
       </div>
-      <div class="tab-content active" id="worst">
-        <div class="chart-container">
-          <canvas id="worst-chart"></canvas>
-        </div>
+    </div>
+    <div class="chart-container">
+      <canvas id="worst-chart"></canvas>
+    </div>
+    <div class="data-table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Country</th>
+            <th>Value</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody id="worst-table">
+          <!-- Data will be inserted by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="tab-content" id="best">
+    <div class="chart-header">
+      <h3>Countries with Lowest Road Fatality Rates</h3>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="color-box best"></span> Current Year</span>
+        <span class="legend-item"><span class="color-box comparison"></span> Previous Year</span>
       </div>
-      <div class="tab-content" id="best">
-        <div class="chart-container">
-          <canvas id="best-chart"></canvas>
-        </div>
+    </div>
+    <div class="chart-container">
+      <canvas id="best-chart"></canvas>
+    </div>
+    <div class="data-table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Country</th>
+            <th>Value</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody id="best-table">
+          <!-- Data will be inserted by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="tab-content" id="improving">
+    <div class="chart-header">
+      <h3>Countries with Most Improved Safety Records</h3>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="color-box improving"></span> Improvement</span>
       </div>
-      <div class="tab-content" id="improving">
-        <div class="chart-container">
-          <canvas id="improving-chart"></canvas>
-        </div>
-      </div>
-    </section>
+    </div>
+    <div class="chart-container">
+      <canvas id="improving-chart"></canvas>
+    </div>
+    <div class="data-table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Country</th>
+            <th>Improvement</th>
+            <th>Previous</th>
+            <th>Current</th>
+          </tr>
+        </thead>
+        <tbody id="improving-table">
+          <!-- Data will be inserted by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="data-source">
+    <p>Data source: World Health Organization (WHO) Global Status Report on Road Safety</p>
+  </div>
+</section>
 
     <!-- Dangerous Roads Showcase -->
     <section class="dangerous-roads-section">

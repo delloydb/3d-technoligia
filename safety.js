@@ -519,3 +519,287 @@ function updateChartAxes(metric) {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initComparisonSection);
 
+// Initialize Dangerous Roads Section
+function initDangerousRoads() {
+  // Sample data for dangerous roads
+  const dangerousRoads = [
+    {
+      id: 1,
+      title: "North Yungas Road",
+      location: "Bolivia",
+      type: "Mountain Road",
+      image: "https://example.com/road1.jpg",
+      fatalities: "200-300",
+      length: "69 km",
+      dangerRating: 5,
+      hazards: [
+        "Narrow lanes", "Steep cliffs", "No guardrails", 
+        "Frequent landslides", "Poor visibility"
+      ],
+      description: "Known as 'Death Road', this treacherous route features single-lane width, 600-meter drops, and frequent fog and rain. It's estimated that 200-300 travelers die here annually.",
+      tips: [
+        "Travel during daylight hours only",
+        "Use experienced local drivers",
+        "Avoid the route during rainy season",
+        "Check weather conditions before traveling",
+        "Ensure vehicle is in excellent condition"
+      ]
+    },
+    {
+      id: 2,
+      title: "Sichuan-Tibet Highway",
+      location: "China",
+      type: "High Mountain Highway",
+      image: "https://example.com/road2.jpg",
+      fatalities: "150+",
+      length: "2,142 km",
+      dangerRating: 4,
+      hazards: [
+        "Altitude sickness", "Rockfalls", 
+        "Unpredictable weather", "Poor road conditions"
+      ],
+      description: "This high-altitude highway climbs to over 5,000 meters, with sharp turns, unstable terrain, and sudden weather changes that make it extremely hazardous.",
+      tips: [
+        "Acclimate to altitude before traveling",
+        "Carry oxygen supplies",
+        "Check avalanche warnings",
+        "Travel in convoy when possible",
+        "Avoid winter months"
+      ]
+    },
+    {
+      id: 3,
+      title: "James Dalton Highway",
+      location: "Alaska, USA",
+      type: "Remote Arctic Road",
+      image: "https://example.com/road3.jpg",
+      fatalities: "50+",
+      length: "666 km",
+      dangerRating: 4,
+      hazards: [
+        "Extreme cold", "Isolation", 
+        "Gravel surface", "Wild animals"
+      ],
+      description: "This isolated road through the Arctic wilderness has no services, extreme weather, and long distances between help. Breakdowns can be deadly in winter.",
+      tips: [
+        "Carry emergency supplies for several days",
+        "Have satellite communication",
+        "Winterize your vehicle properly",
+        "Travel with extra fuel",
+        "Inform others of your travel plans"
+      ]
+    },
+    {
+      id: 4,
+      title: "Taroko Gorge Road",
+      location: "Taiwan",
+      type: "Mountain Cliff Road",
+      image: "https://example.com/road4.jpg",
+      fatalities: "100+",
+      length: "19 km",
+      dangerRating: 4,
+      hazards: [
+        "Narrow tunnels", "Falling rocks", 
+        "Sharp curves", "Heavy tourist traffic"
+      ],
+      description: "This scenic but deadly road cuts through marble cliffs with frequent rockfalls and blind curves. The narrow tunnels are particularly dangerous for larger vehicles.",
+      tips: [
+        "Avoid driving after heavy rains",
+        "Watch for falling rocks",
+        "Use horn before entering tunnels",
+        "Drive slowly and cautiously",
+        "Avoid large vehicles if possible"
+      ]
+    },
+    {
+      id: 5,
+      title: "Trollstigen",
+      location: "Norway",
+      type: "Mountain Pass",
+      image: "https://example.com/road5.jpg",
+      fatalities: "30+",
+      length: "8 km",
+      dangerRating: 3,
+      hazards: [
+        "Steep inclines", "Sharp hairpin turns", 
+        "Narrow width", "Tourist congestion"
+      ],
+      description: "The 'Troll's Path' features 11% gradients, sharp hairpin turns, and sections barely wide enough for two cars. The steep drops make any mistake potentially fatal.",
+      tips: [
+        "Use low gear on descents",
+        "Pull over at viewing areas to let others pass",
+        "Avoid peak tourist seasons",
+        "Check for road closures before traveling",
+        "Don't stop on the road itself"
+      ]
+    }
+  ];
+
+  // DOM elements
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselDots = document.querySelector('.carousel-dots');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const modal = document.querySelector('.road-details-modal');
+  const closeModal = document.querySelector('.close-modal');
+
+  // State variables
+  let currentIndex = 0;
+  const cardWidth = 280; // Should match CSS card width + gap
+  const visibleCards = Math.min(3, dangerousRoads.length);
+
+  // Initialize carousel
+  function initCarousel() {
+    // Create road cards
+    carouselTrack.innerHTML = dangerousRoads.map(road => `
+      <div class="road-card" data-id="${road.id}">
+        <img src="${road.image}" alt="${road.title}" class="road-card-image">
+        <div class="road-card-content">
+          <h3 class="road-card-title">${road.title}</h3>
+          <div class="road-card-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>${road.location}</span>
+          </div>
+          <div class="road-card-stats">
+            <div class="road-card-stat">
+              <span class="road-card-stat-value">${road.fatalities}</span>
+              <span class="road-card-stat-label">Fatalities</span>
+            </div>
+            <div class="road-card-stat">
+              <span class="road-card-stat-value">${road.length}</span>
+              <span class="road-card-stat-label">Length</span>
+            </div>
+            <div class="road-card-stat">
+              <span class="road-card-stat-value">${'★'.repeat(road.dangerRating)}${'☆'.repeat(5 - road.dangerRating)}</span>
+              <span class="road-card-stat-label">Danger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Create dots
+    carouselDots.innerHTML = dangerousRoads.map((_, index) => `
+      <button class="carousel-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></button>
+    `).join('');
+
+    // Set initial position
+    updateCarousel();
+  }
+
+  // Update carousel position
+  function updateCarousel() {
+    const offset = -currentIndex * (cardWidth + 24); // 24px gap
+    carouselTrack.style.transform = `translateX(${offset}px)`;
+    
+    // Update dots
+    document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+    
+    // Update button states
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= dangerousRoads.length - visibleCards;
+  }
+
+  // Show modal with road details
+  function showRoadDetails(roadId) {
+    const road = dangerousRoads.find(r => r.id === roadId);
+    if (!road) return;
+    
+    // Populate modal
+    document.querySelector('.road-title').textContent = road.title;
+    document.querySelector('.road-location').textContent = road.location;
+    document.querySelector('.road-type').textContent = road.type;
+    document.querySelector('.stat-value.fatalities').textContent = road.fatalities;
+    document.querySelector('.stat-value.length').textContent = road.length;
+    document.querySelector('.stat-value.danger-rating').textContent = road.dangerRating;
+    
+    // Create stars for rating
+    const starsContainer = document.querySelector('.rating-stars');
+    starsContainer.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement('i');
+      star.className = i < road.dangerRating ? 'fas fa-star' : 'far fa-star';
+      starsContainer.appendChild(star);
+    }
+    
+    // Set hazards
+    const hazardsList = document.querySelector('.hazards-list');
+    hazardsList.innerHTML = road.hazards.map(hazard => `
+      <span class="hazard-tag">
+        <i class="fas fa-exclamation-triangle"></i>
+        ${hazard}
+      </span>
+    `).join('');
+    
+    // Set description and tips
+    document.querySelector('.road-description').textContent = road.description;
+    
+    const tipsList = document.querySelector('.tips-list');
+    tipsList.innerHTML = road.tips.map(tip => `<li>${tip}</li>`).join('');
+    
+    // Set map image (in a real app, this would be an interactive map)
+    document.querySelector('.road-map-image').src = road.image;
+    document.querySelector('.road-map-image').alt = `Map of ${road.title}`;
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Event listeners
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < dangerousRoads.length - visibleCards) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  document.querySelectorAll('.carousel-dot').forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      currentIndex = parseInt(e.target.dataset.index);
+      updateCarousel();
+    });
+  });
+
+  // Delegate card click events
+  carouselTrack.addEventListener('click', (e) => {
+    const card = e.target.closest('.road-card');
+    if (card) {
+      const roadId = parseInt(card.dataset.id);
+      showRoadDetails(roadId);
+    }
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  document.querySelector('.modal-overlay').addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (modal.classList.contains('active') && e.key === 'Escape') {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Initialize
+  initCarousel();
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initDangerousRoads);

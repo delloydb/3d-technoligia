@@ -312,39 +312,86 @@
   </div>
 </section>
 
-    <!-- Dangerous Roads Showcase -->
-    <section class="dangerous-roads-section">
-      <h2>World's Most Dangerous Roads</h2>
-      <div class="roads-carousel">
-        <button class="carousel-btn prev" aria-label="Previous road"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-track">
-          <!-- Road cards injected via JS -->
-        </div>
-        <button class="carousel-btn next" aria-label="Next road"><i class="fas fa-chevron-right"></i></button>
+ <!-- Dangerous Roads Showcase -->
+<section class="dangerous-roads-section">
+  <div class="section-header">
+    <h2>World's Most Dangerous Roads</h2>
+    <p class="section-subtitle">Explore the most treacherous routes across the globe with high fatality rates</p>
+  </div>
+  
+  <div class="roads-carousel">
+    <button class="carousel-btn prev" aria-label="Previous road">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Road cards will be injected here by JavaScript -->
       </div>
-      <div class="road-details-modal">
-        <div class="modal-content">
-          <button class="close-modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
-          <h3 class="road-title"></h3>
-          <div class="road-stats">
-            <div class="stat">
-              <span class="stat-value fatalities"></span>
-              <span class="stat-label">Annual Fatalities</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value length"></span>
-              <span class="stat-label">Length</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value danger-rating"></span>
-              <span class="stat-label">Danger Rating</span>
-            </div>
+    </div>
+    
+    <button class="carousel-btn next" aria-label="Next road">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  
+  <div class="carousel-dots">
+    <!-- Navigation dots will be injected here by JavaScript -->
+  </div>
+  
+  <div class="road-details-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 class="road-title"></h3>
+      <div class="road-meta">
+        <span class="road-location"></span>
+        <span class="road-type"></span>
+      </div>
+      
+      <div class="road-stats">
+        <div class="stat">
+          <span class="stat-value fatalities"></span>
+          <span class="stat-label">Annual Fatalities</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value length"></span>
+          <span class="stat-label">Length</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value danger-rating"></span>
+          <span class="stat-label">Danger Rating</span>
+          <div class="rating-stars"></div>
+        </div>
+      </div>
+      
+      <div class="road-map" id="road-detail-map">
+        <!-- Map placeholder - would be replaced with actual map in implementation -->
+        <div class="map-placeholder">
+          <img src="" alt="Road map" class="road-map-image">
+          <div class="map-overlay">
+            <button class="view-satellite">Satellite View</button>
+            <button class="view-terrain">Terrain View</button>
           </div>
-          <div class="road-map" id="road-detail-map"></div>
-          <p class="road-description"></p>
         </div>
       </div>
-    </section>
+      
+      <div class="road-hazards">
+        <h4>Primary Hazards</h4>
+        <div class="hazards-list"></div>
+      </div>
+      
+      <p class="road-description"></p>
+      
+      <div class="safety-tips">
+        <h4>Safety Tips for This Route</h4>
+        <ul class="tips-list"></ul>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Pedestrian Safety -->
     <section class="pedestrian-section">

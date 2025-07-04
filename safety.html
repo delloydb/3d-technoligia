@@ -66,6 +66,7 @@
         </div>
         <p class="counter-label">Daily Road Fatalities</p>
       </div>
+<<<<<<< HEAD
       
       <div class="counter-item">
         <div class="counter-wrapper">
@@ -96,6 +97,9 @@
   </div>
 </section>
 
+=======
+    </section>
+>>>>>>> 640c0c219ee1a4264ab359afa44dd34632594a9f
 <!-- Interactive Safety Map -->
 <section class="safety-map-section">
   <div class="map-container">
@@ -159,6 +163,94 @@
             <span>10</span>
             <span>15</span>
             <span>20+</span>
+<<<<<<< HEAD
+=======
+          </div>
+        </div>
+        <p class="legend-note">Deaths per 100,000 population</p>
+      </div>
+    </div>
+    
+    <div class="map-tooltip">
+      <div class="tooltip-header">
+        <h4 class="country-name"></h4>
+        <span class="country-value"></span>
+      </div>
+      <div class="tooltip-body">
+        <div class="tooltip-metric">
+          <span class="metric-label">Total Deaths</span>
+          <span class="metric-value deaths"></span>
+        </div>
+        <div class="tooltip-metric">
+          <span class="metric-label">Pedestrian</span>
+          <span class="metric-value pedestrians"></span>
+        </div>
+        <div class="tooltip-metric">
+          <span class="metric-label">Motorcyclist</span>
+          <span class="metric-value motorcyclists"></span>
+        </div>
+        <div class="tooltip-metric">
+          <span class="metric-label">Child (0-14)</span>
+          <span class="metric-value children"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Country Comparison -->
+    <section class="comparison-section">
+      <h2>Safety Comparison by Country</h2>
+      <div class="comparison-tabs">
+        <button class="tab-btn active" data-tab="worst">Most Dangerous</button>
+        <button class="tab-btn" data-tab="best">Safest</button>
+        <button class="tab-btn" data-tab="improving">Most Improved</button>
+      </div>
+      <div class="tab-content active" id="worst">
+        <div class="chart-container">
+          <canvas id="worst-chart"></canvas>
+        </div>
+      </div>
+      <div class="tab-content" id="best">
+        <div class="chart-container">
+          <canvas id="best-chart"></canvas>
+        </div>
+      </div>
+      <div class="tab-content" id="improving">
+        <div class="chart-container">
+          <canvas id="improving-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dangerous Roads Showcase -->
+    <section class="dangerous-roads-section">
+      <h2>World's Most Dangerous Roads</h2>
+      <div class="roads-carousel">
+        <button class="carousel-btn prev" aria-label="Previous road"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track">
+          <!-- Road cards injected via JS -->
+        </div>
+        <button class="carousel-btn next" aria-label="Next road"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="road-details-modal">
+        <div class="modal-content">
+          <button class="close-modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+          <h3 class="road-title"></h3>
+          <div class="road-stats">
+            <div class="stat">
+              <span class="stat-value fatalities"></span>
+              <span class="stat-label">Annual Fatalities</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value length"></span>
+              <span class="stat-label">Length</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value danger-rating"></span>
+              <span class="stat-label">Danger Rating</span>
+            </div>
+>>>>>>> 640c0c219ee1a4264ab359afa44dd34632594a9f
           </div>
         </div>
         <p class="legend-note">Deaths per 100,000 population</p>

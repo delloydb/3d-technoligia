@@ -528,7 +528,7 @@ function initDangerousRoads() {
       title: "North Yungas Road",
       location: "Bolivia",
       type: "Mountain Road",
-      image: "https://example.com/road1.jpg",
+      image: "1.jpg",
       fatalities: "200-300",
       length: "69 km",
       dangerRating: 5,
@@ -550,7 +550,7 @@ function initDangerousRoads() {
       title: "Sichuan-Tibet Highway",
       location: "China",
       type: "High Mountain Highway",
-      image: "https://example.com/road2.jpg",
+      image: "2.jpg",
       fatalities: "150+",
       length: "2,142 km",
       dangerRating: 4,
@@ -572,7 +572,7 @@ function initDangerousRoads() {
       title: "James Dalton Highway",
       location: "Alaska, USA",
       type: "Remote Arctic Road",
-      image: "https://example.com/road3.jpg",
+      image: "3.jpg",
       fatalities: "50+",
       length: "666 km",
       dangerRating: 4,
@@ -594,7 +594,7 @@ function initDangerousRoads() {
       title: "Taroko Gorge Road",
       location: "Taiwan",
       type: "Mountain Cliff Road",
-      image: "https://example.com/road4.jpg",
+      image: "4.jpg",
       fatalities: "100+",
       length: "19 km",
       dangerRating: 4,
@@ -616,7 +616,7 @@ function initDangerousRoads() {
       title: "Trollstigen",
       location: "Norway",
       type: "Mountain Pass",
-      image: "https://example.com/road5.jpg",
+      image: "2.jpg",
       fatalities: "30+",
       length: "8 km",
       dangerRating: 3,
@@ -632,7 +632,95 @@ function initDangerousRoads() {
         "Check for road closures before traveling",
         "Don't stop on the road itself"
       ]
-    }
+    },
+        {
+      id: 5,
+      title: "Trollstigen",
+      location: "Norway",
+      type: "Mountain Pass",
+      image: "2.jpg",
+      fatalities: "30+",
+      length: "8 km",
+      dangerRating: 3,
+      hazards: [
+        "Steep inclines", "Sharp hairpin turns", 
+        "Narrow width", "Tourist congestion"
+      ],
+      description: "The 'Troll's Path' features 11% gradients, sharp hairpin turns, and sections barely wide enough for two cars. The steep drops make any mistake potentially fatal.",
+      tips: [
+        "Use low gear on descents",
+        "Pull over at viewing areas to let others pass",
+        "Avoid peak tourist seasons",
+        "Check for road closures before traveling",
+        "Don't stop on the road itself"
+      ]
+    },
+        {
+      id: 5,
+      title: "Trollstigen",
+      location: "Norway",
+      type: "Mountain Pass",
+      image: "2.jpg",
+      fatalities: "30+",
+      length: "8 km",
+      dangerRating: 3,
+      hazards: [
+        "Steep inclines", "Sharp hairpin turns", 
+        "Narrow width", "Tourist congestion"
+      ],
+      description: "The 'Troll's Path' features 11% gradients, sharp hairpin turns, and sections barely wide enough for two cars. The steep drops make any mistake potentially fatal.",
+      tips: [
+        "Use low gear on descents",
+        "Pull over at viewing areas to let others pass",
+        "Avoid peak tourist seasons",
+        "Check for road closures before traveling",
+        "Don't stop on the road itself"
+      ]
+    },
+        {
+      id: 5,
+      title: "Trollstigen",
+      location: "Norway",
+      type: "Mountain Pass",
+      image: "2.jpg",
+      fatalities: "30+",
+      length: "8 km",
+      dangerRating: 3,
+      hazards: [
+        "Steep inclines", "Sharp hairpin turns", 
+        "Narrow width", "Tourist congestion"
+      ],
+      description: "The 'Troll's Path' features 11% gradients, sharp hairpin turns, and sections barely wide enough for two cars. The steep drops make any mistake potentially fatal.",
+      tips: [
+        "Use low gear on descents",
+        "Pull over at viewing areas to let others pass",
+        "Avoid peak tourist seasons",
+        "Check for road closures before traveling",
+        "Don't stop on the road itself"
+      ]
+    },
+        {
+      id: 3,
+      title: "James Dalton Highway",
+      location: "Alaska, USA",
+      type: "Remote Arctic Road",
+      image: "3.jpg",
+      fatalities: "50+",
+      length: "666 km",
+      dangerRating: 4,
+      hazards: [
+        "Extreme cold", "Isolation", 
+        "Gravel surface", "Wild animals"
+      ],
+      description: "This isolated road through the Arctic wilderness has no services, extreme weather, and long distances between help. Breakdowns can be deadly in winter.",
+      tips: [
+        "Carry emergency supplies for several days",
+        "Have satellite communication",
+        "Winterize your vehicle properly",
+        "Travel with extra fuel",
+        "Inform others of your travel plans"
+      ]
+    },
   ];
 
   // DOM elements
